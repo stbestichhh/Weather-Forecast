@@ -36,7 +36,7 @@ public partial class WeatherPage : ContentPage
 
     private async void OnSearchButtonClicked(object sender, EventArgs e)
     {
-        await GetUsersLocation();
+        var searchResponse = await DisplayPromptAsync(title: "", message: "", placeholder: "Enter city name", accept: "Search", cancel: "Cancel");
     }
 
     public async Task GetWeatherByLocationButton(double latitute, double longitude)
