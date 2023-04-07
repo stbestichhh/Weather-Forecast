@@ -34,6 +34,11 @@ public partial class WeatherPage : ContentPage
         await GetWeatherByLocationButton(latitude, longitude);
     }
 
+    private async void OnSearchButtonClicked(object sender, EventArgs e)
+    {
+
+    }
+
     public async Task GetWeatherByLocationButton(double latitute, double longitude)
     {
         var getWeather = await ApiService.GetWeather(latitude, longitude); //latitude and longitude
