@@ -59,9 +59,51 @@
 	<ItemGroup>
 	  <None Remove="Models\" />
 	  <None Remove="Services\" />
+	  <None Remove="Resources\Images\hydrometer.png" />
+	  <None Remove="Resources\Images\icon_01d.png" />
+	  <None Remove="Resources\Images\icon_01n.png" />
+	  <None Remove="Resources\Images\icon_02d.png" />
+	  <None Remove="Resources\Images\icon_02n.png" />
+	  <None Remove="Resources\Images\icon_3d.png" />
+	  <None Remove="Resources\Images\icon_3n.png" />
+	  <None Remove="Resources\Images\icon_04d.png" />
+	  <None Remove="Resources\Images\icon_04n.png" />
+	  <None Remove="Resources\Images\icon_09.png" />
+	  <None Remove="Resources\Images\icon_09n.png" />
+	  <None Remove="Resources\Images\icon_10d.png" />
+	  <None Remove="Resources\Images\icon_10n.png" />
+	  <None Remove="Resources\Images\icon_11d.png" />
+	  <None Remove="Resources\Images\icon_11n.png" />
+	  <None Remove="Resources\Images\icon_13d.png" />
+	  <None Remove="Resources\Images\icon_13n.png" />
+	  <None Remove="Resources\Images\icon_50d.png" />
+	  <None Remove="Resources\Images\icon_50n.png" />
+	  <None Remove="Resources\Images\wind.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Models\" />
 	  <Folder Include="Services\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\hydrometer.png" />
+	  <BundleResource Include="Resources\Images\icon_01d.png" />
+	  <BundleResource Include="Resources\Images\icon_01n.png" />
+	  <BundleResource Include="Resources\Images\icon_02d.png" />
+	  <BundleResource Include="Resources\Images\icon_02n.png" />
+	  <BundleResource Include="Resources\Images\icon_3d.png" />
+	  <BundleResource Include="Resources\Images\icon_3n.png" />
+	  <BundleResource Include="Resources\Images\icon_04d.png" />
+	  <BundleResource Include="Resources\Images\icon_04n.png" />
+	  <BundleResource Include="Resources\Images\icon_09.png" />
+	  <BundleResource Include="Resources\Images\icon_09n.png" />
+	  <BundleResource Include="Resources\Images\icon_10d.png" />
+	  <BundleResource Include="Resources\Images\icon_10n.png" />
+	  <BundleResource Include="Resources\Images\icon_11d.png" />
+	  <BundleResource Include="Resources\Images\icon_11n.png" />
+	  <BundleResource Include="Resources\Images\icon_13d.png" />
+	  <BundleResource Include="Resources\Images\icon_13n.png" />
+	  <BundleResource Include="Resources\Images\icon_50d.png" />
+	  <BundleResource Include="Resources\Images\icon_50n.png" />
+	  <BundleResource Include="Resources\Images\wind.png" />
 	</ItemGroup>
 </Project>
