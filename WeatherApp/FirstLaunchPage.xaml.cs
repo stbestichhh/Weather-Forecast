@@ -6,4 +6,9 @@ public partial class FirstLaunchPage : ContentPage
     {
         InitializeComponent();
     }
+
+    void StartButton_Clicked(System.Object sender, System.EventArgs e)
+    {
+
+    }
 }
