@@ -5,6 +5,8 @@ namespace WeatherApp;
 public partial class WeatherPage : ContentPage
 {
     public List<Models.List> WeatherList;
+    public double latitude;
+    public double longitude;
 
     public WeatherPage()
     {
@@ -29,5 +31,12 @@ public partial class WeatherPage : ContentPage
         hydrometerValueLabel.Text = getWeather.list[0].main.humidity + " %"; //humidity - (ru)влажность
         windSpeedLabel.Text = getWeather.list[0].wind.speedInMeters + " m/s"; //wind speed
         weatherConditionsImage.Source = getWeather.list[0].weather[0].weatherImage; //weather image
+    }
+
+    public async Task GetUsersLocation()
+    {
+        var userLocation = await Geolocation.GetLocationAsync();
+        latitude = userLocation.Latitude;
+        longitude = userLocation.Longitude;
     }
 }
