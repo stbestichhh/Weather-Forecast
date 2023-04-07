@@ -6,7 +6,22 @@
 
     <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto"
           RowSpacing="20">
+        <StackLayout Grid.Row="0" Margin="20,20,20,0"
+                     Orientation="Horizontal">
 
+            <Button Text="Где Я?" FontSize="Default"
+                    FontAttributes="Bold" FontFamily=""
+                    TextColor="CornflowerBlue"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="StartAndExpand"/>
+
+            <Button Text="Поиск" FontSize="Default"
+                    FontAttributes="Bold" FontFamily=""
+                    TextColor="CornflowerBlue"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="EndAndExpand"/>
+
+        </StackLayout>
 
     </Grid>
 
