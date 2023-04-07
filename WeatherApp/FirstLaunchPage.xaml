@@ -7,8 +7,6 @@
 
     <StackLayout VerticalOptions="Center" Margin="20">
 
-        <Image Source="icon_10d" HeightRequest="100" WidthRequest="100"/>
-
         <Label Text="Weather" FontSize="40" TextColor="CornflowerBlue"
                FontAttributes="Bold" FontFamily=""/>
 
