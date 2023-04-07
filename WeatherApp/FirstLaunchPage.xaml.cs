@@ -9,6 +9,6 @@ public partial class FirstLaunchPage : ContentPage
 
     void StartButton_Clicked(System.Object sender, System.EventArgs e)
     {
-        Navigation.PushModalAsync(new WeatherPage());
+
     }
 }
