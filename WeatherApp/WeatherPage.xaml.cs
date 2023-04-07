@@ -17,7 +17,8 @@ public partial class WeatherPage : ContentPage
     protected async override void OnAppearing()
     {
         base.OnAppearing();
-        var getWeather = await ApiService.GetWeather(44, 26); //latitude and longitude
+        await GetUsersLocation();
+        var getWeather = await ApiService.GetWeather(latitude, longitude); //latitude and longitude
 
         foreach(var weatherOption in getWeather.list)
         {
