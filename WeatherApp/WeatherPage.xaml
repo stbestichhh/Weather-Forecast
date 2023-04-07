@@ -9,13 +9,13 @@
         <StackLayout Grid.Row="0" Margin="20,20,20,0"
                      Orientation="Horizontal">
 
-            <Button Text="Где Я?" FontSize="Default"
+            <Button Text="Where am I?" FontSize="Default"
                     FontAttributes="Bold" FontFamily=""
                     TextColor="CornflowerBlue"
                     BackgroundColor="Transparent"
                     HorizontalOptions="StartAndExpand"/>
 
-            <Button Text="Поиск" FontSize="Default"
+            <Button Text="Search" FontSize="Default"
                     FontAttributes="Bold" FontFamily=""
                     TextColor="CornflowerBlue"
                     BackgroundColor="Transparent"
