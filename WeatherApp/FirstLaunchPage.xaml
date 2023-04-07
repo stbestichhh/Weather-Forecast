@@ -5,6 +5,24 @@
              Title="FirstLaunchPage"
              BackgroundColor="White">
 
+    <StackLayout VerticalOptions="Center" Margin="20">
 
+        <Image Source="icon_10d" HeightRequest="100" WidthRequest="100"/>
+
+        <Label Text="Weather" FontSize="40" TextColor="CornflowerBlue"
+               FontAttributes="Bold" FontFamily=""/>
+
+        <Label Text="by stbestichhh" FontSize="Default"
+               FontAttributes="Bold" FontFamily="" TextColor="CornflowerBlue"/>
+
+        <Button x:Name="StartButton" Text="See forecast"
+                FontSize="Large" TextColor="CornflowerBlue"
+                FontAttributes="Bold" FontFamily=""
+                BackgroundColor="GhostWhite"
+                CornerRadius="35"
+                WidthRequest="250" Margin="0,30,0,0"
+                Clicked="StartButton_Clicked"/>                
+
+    </StackLayout>
 
 </ContentPage>
