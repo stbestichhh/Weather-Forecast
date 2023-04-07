@@ -13,13 +13,17 @@
                     FontAttributes="Bold" FontFamily=""
                     TextColor="CornflowerBlue"
                     BackgroundColor="Transparent"
-                    HorizontalOptions="StartAndExpand"/>
+                    HorizontalOptions="StartAndExpand"
+                    x:Name="LocationButton"
+                    Clicked="OnLocationButtonClicked"/>
 
             <Button Text="Search" FontSize="Default"
                     FontAttributes="Bold" FontFamily=""
                     TextColor="CornflowerBlue"
                     BackgroundColor="Transparent"
-                    HorizontalOptions="EndAndExpand"/>
+                    HorizontalOptions="EndAndExpand"
+                    x:Name="SearchButton"
+                    Clicked="OnSearchButtonClicked"/>
 
         </StackLayout>
 
