@@ -108,7 +108,7 @@
                                VerticalOptions="Start"
                                HeightRequest="50"
                                WidthRequest="50"
-                               Source="{Binding weather[0].weatherImage}"/>
+                               Source="{Binding weather[0].apiWeatherImage}"/>
 
                         <Label Grid.Row="2"
                                FontSize="Large"
