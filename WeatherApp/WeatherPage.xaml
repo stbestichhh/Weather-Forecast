@@ -23,6 +23,25 @@
 
         </StackLayout>
 
+        <StackLayout Grid.Row="1" Orientation="Vertical">
+
+            <Label x:Name="cityLabel" Text="Киев"
+                   FontSize="40" TextColor="Grey"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+
+            <Image x:Name="weatherConditionsImage"
+               VerticalOptions="Start"
+               HeightRequest="100" WidthRequest="100"
+               Source="icon_01d"/>
+
+        </StackLayout>
+
+        <Label x:Name="weatherConditionsLabel" Text="ясно"
+               Grid.Row="2"
+               FontSize="Default" TextColor="Grey"
+               HorizontalOptions="Center"/>       
+
     </Grid>
 
 </ContentPage>
