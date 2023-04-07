@@ -37,12 +37,26 @@ public partial class WeatherPage : ContentPage
     private async void OnSearchButtonClicked(object sender, EventArgs e)
     {
         var searchResponse = await DisplayPromptAsync(title: "", message: "", placeholder: "Enter city name", accept: "Search", cancel: "Cancel");
+        if(searchResponse != null)
+        {
+            await GetWeatherByCityButton(searchResponse);
+        }
     }
 
     public async Task GetWeatherByLocationButton(double latitute, double longitude)
     {
-        var getWeather = await ApiService.GetWeather(latitude, longitude); //latitude and longitude
+        var getWeather = await ApiService.GetWeather(latitute, longitude);     
+        UpdateUI(getWeather);
+    }
 
+    public async Task GetWeatherByCityButton(string city)
+    {
+        var getWeather = await ApiService.GetWeatherByCity(city);
+        UpdateUI(getWeather);
+    }
+
+    public void UpdateUI(dynamic getWeather)
+    {
         foreach (var weatherOption in getWeather.list)
         {
             WeatherList.Add(weatherOption);
