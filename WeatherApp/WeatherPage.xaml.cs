@@ -19,5 +19,6 @@ public partial class WeatherPage : ContentPage
         temperatureValueLabel.Text = getWeather.list[0].main.convertedTemp + "°C"; //temperature
         hydrometerValueLabel.Text = getWeather.list[0].main.humidity + " %"; //humidity - (ru)влажность
         windSpeedLabel.Text = getWeather.list[0].wind.speedInMeters + " m/s"; //wind speed
+        weatherConditionsImage.Source = getWeather.list[0].weather[0].weatherImage; //weather image
     }
 }
