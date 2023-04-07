@@ -26,7 +26,8 @@
         <StackLayout Grid.Row="1" Orientation="Vertical">
 
             <Label x:Name="cityLabel" Text="Киев"
-                   FontSize="40" TextColor="Grey"
+                   FontSize="50" TextColor="Grey"
+                   FontFamily=""
                    FontAttributes="Bold"
                    HorizontalOptions="Center"/>
 
@@ -41,6 +42,51 @@
                Grid.Row="2"
                FontSize="Default" TextColor="Grey"
                HorizontalOptions="Center"/>       
+
+        <Grid Grid.Row="3"
+              RowDefinitions="Auto, Auto"
+              ColumnDefinitions="0.33*, 0.33*, 0.33*"
+              Margin="20">
+            <!--left--> 
+            <Image Grid.Row="0" Grid.Column="0"
+                   HorizontalOptions="Center"
+                   HeightRequest="50"
+                   Source="hydrometer.png"/>
+
+            <Label x:Name="hydrometerValueLabel"
+                   Grid.Row="1" Grid.Column="0"
+                   HorizontalOptions="Center"                   
+                   FontAttributes="Bold"
+                   TextColor="CornflowerBlue"
+                   FontFamily=""
+                   Text="10"/>
+
+            <!--center-->
+            <Label x:Name="temperatureValueLabel"
+                   Grid.Row="0" Grid.Column="1"
+                   Grid.RowSpan="2"
+                   HorizontalOptions="Center"
+                   FontSize="50"
+                   FontAttributes="Bold"
+                   FontFamily=""
+                   TextColor="Grey"
+                   Text="10"/>
+
+            <!--right-->
+            <Image Grid.Row="0" Grid.Column="2"
+                   HorizontalOptions="Center"
+                   HeightRequest="50"
+                   Source="wind.png"/>
+
+            <Label x:Name="windSpeedLabel"
+                   Grid.Row="1" Grid.Column="2"
+                   HorizontalOptions="Center"                   
+                   FontAttributes="Bold"
+                   TextColor="CornflowerBlue"
+                   FontFamily=""
+                   Text="10"/>
+
+        </Grid>
 
     </Grid>
 
