@@ -58,8 +58,7 @@
                    HorizontalOptions="Center"                   
                    FontAttributes="Bold"
                    TextColor="CornflowerBlue"
-                   FontFamily=""
-                   Text="10"/>
+                   FontFamily=""/>
 
             <!--center-->
             <Label x:Name="temperatureValueLabel"
@@ -82,8 +81,7 @@
                    HorizontalOptions="Center"                   
                    FontAttributes="Bold"
                    TextColor="CornflowerBlue"
-                   FontFamily=""
-                   Text="10"/>
+                   FontFamily=""/>
 
         </Grid>
 

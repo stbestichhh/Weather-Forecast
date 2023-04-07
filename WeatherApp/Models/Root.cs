@@ -77,6 +77,7 @@ namespace WeatherApp.Models
     public class Wind
     {
         public double speed { get; set; }
+        public double speedInMeters => Math.Round(speed / 3.6);
         public int deg { get; set; }
         public double gust { get; set; }
     }
