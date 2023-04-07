@@ -33,8 +33,7 @@
 
             <Image x:Name="weatherConditionsImage"
                VerticalOptions="Start"
-               HeightRequest="100" WidthRequest="100"
-               Source="icon_01d"/>
+               HeightRequest="100" WidthRequest="100"/>
 
         </StackLayout>
 
