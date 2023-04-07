@@ -13,7 +13,9 @@ public partial class WeatherPage : ContentPage
     {
         base.OnAppearing();
         var getWeather = await ApiService.GetWeather(44, 26); //latitude and longitude
-        cityLabel.Text = getWeather.city.name;
-        weatherConditionsLabel.Text = getWeather.list[0].weather[0].description;
+
+        cityLabel.Text = getWeather.city.name; //city name
+        weatherConditionsLabel.Text = getWeather.list[0].weather[0].description; //weather description
+        temperatureValueLabel.Text = getWeather.list[0].main.temp + "°C"; //temperature  
     }
 }
