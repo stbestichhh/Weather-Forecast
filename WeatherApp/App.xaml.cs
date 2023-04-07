@@ -5,13 +5,16 @@ public partial class App : Application
     public App()
     {
         InitializeComponent();
+
         VersionTracking.Track();
-        if(VersionTracking.IsFirstLaunchEver)
+        if(VersionTracking.IsFirstLaunchEver == true)
         {
             MainPage = new FirstLaunchPage();
         }
-
-        MainPage = new WeatherPage();
+        else
+        {
+            MainPage = new WeatherPage();
+        }
     }
 }
 
