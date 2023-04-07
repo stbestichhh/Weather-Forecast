@@ -25,7 +25,7 @@
 
         <StackLayout Grid.Row="1" Orientation="Vertical">
 
-            <Label x:Name="cityLabel" Text="Киев"
+            <Label x:Name="cityLabel"
                    FontSize="50" TextColor="Grey"
                    FontFamily=""
                    FontAttributes="Bold"
@@ -38,7 +38,7 @@
 
         </StackLayout>
 
-        <Label x:Name="weatherConditionsLabel" Text="ясно"
+        <Label x:Name="weatherConditionsLabel"
                Grid.Row="2"
                FontSize="Default" TextColor="Grey"
                HorizontalOptions="Center"/>       

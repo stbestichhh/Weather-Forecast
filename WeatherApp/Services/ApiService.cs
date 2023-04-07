@@ -16,7 +16,7 @@ namespace WeatherApp.Services
         public static async Task<Root> GetWeatherByCity(string city)
         {
             var httpClient = new HttpClient();
-            var response = await httpClient.GetStringAsync(string.Format("http://api.openweathermap.org/data/2.5/forecast?q={0}&appid=98cf0673e88ccd55a86fda0cfe7e0a80", city));
+            var response = await httpClient.GetStringAsync(string.Format("https://api.openweathermap.org/data/2.5/forecast?q={0}&appid=98cf0673e88ccd55a86fda0cfe7e0a80", city));
             return JsonConvert.DeserializeObject<Root>(response);
         }
     }
