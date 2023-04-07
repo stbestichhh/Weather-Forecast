@@ -37,10 +37,17 @@ public partial class WeatherPage : ContentPage
     private async void OnSearchButtonClicked(object sender, EventArgs e)
     {
         var searchResponse = await DisplayPromptAsync(title: "", message: "", placeholder: "Enter city name", accept: "Search", cancel: "Cancel");
-        if(searchResponse != null)
+        try
         {
-            await GetWeatherByCityButton(searchResponse);
+            if (searchResponse != null)
+            {
+                await GetWeatherByCityButton(searchResponse);
+            }
         }
+        catch (Exception ex)
+        {
+            await DisplayAlert(title: "City not found", message:"Make sure the city name is correct and try again.", cancel:"Ok");
+        }        
     }
 
     public async Task GetWeatherByLocationButton(double latitute, double longitude)
