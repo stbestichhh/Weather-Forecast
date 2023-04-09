@@ -5,6 +5,28 @@
              Title="FirstLaunchPage"
              BackgroundColor="White">
 
+    <!--Resources-->
+    <ContentPage.Resources>
+
+        <Style x:Key="ButtonStyle" TargetType="Button">
+
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="TextColor" Value="CornflowerBlue"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontFamily" Value=""/>
+            <Setter Property="BackgroundColor" Value="GhostWhite"/>
+            <Setter Property="CornerRadius" Value="35"/>
+            <Setter Property="WidthRequest" Value="180"/>
+            <Setter Property="HeightRequest" Value="66"/>
+            <Setter Property="Margin" Value="0, 30, 0, 0"/>
+            <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+
+        </Style>
+
+    </ContentPage.Resources>
+
+
+    <!--Page Design-->
     <StackLayout VerticalOptions="Center" Margin="20" Padding="0">
 
         <Label Text="Weather" FontSize="50" TextColor="CornflowerBlue"
@@ -15,13 +37,8 @@
                HorizontalOptions="EndAndExpand"/>
 
         <Button x:Name="StartButton" Text="See forecast"
-                FontSize="Large" TextColor="CornflowerBlue"
-                FontAttributes="Bold" FontFamily=""
-                BackgroundColor="GhostWhite"
-                CornerRadius="35"
-                WidthRequest="180" Margin="0,30,0,0"
-                Clicked="StartButton_Clicked"
-                HorizontalOptions="EndAndExpand"/>                
+                Style="{StaticResource ButtonStyle}"
+                Clicked="StartButton_Clicked"/>                
 
     </StackLayout>
 
