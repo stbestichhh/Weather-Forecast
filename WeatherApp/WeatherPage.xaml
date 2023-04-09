@@ -5,36 +5,102 @@
              Title="WeatherPage"
              BackgroundColor="White">
 
+    <!--Resources-->
+    <ContentPage.Resources>
+
+        <!--Main weather data Resources-->
+        <Style x:Key="TopButtonsStyle" TargetType="Button">
+
+            <Setter Property="FontSize" Value="Default"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontFamily" Value=""/>
+            <Setter Property="TextColor" Value="CornflowerBlue"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+
+        </Style>
+
+        <Style x:Key="CityLabel" TargetType="Label">
+
+            <Setter Property="FontSize" Value="50"/>
+            <Setter Property="TextColor" Value="Gray"/>
+            <Setter Property="FontFamily" Value=""/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+
+        </Style>
+
+        <Style x:Key="WeatherConditionsLabel" TargetType="Label">
+
+            <Setter Property="FontSize" Value="Default"/>
+            <Setter Property="TextColor" Value="Gray"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+
+        </Style>
+
+        <!--Additional Weaher Data Resources-->
+        <Style x:Key="AdditionalWeatherDataImages" TargetType="Image">
+
+            <Setter Property="HeightRequest" Value="50"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+
+        </Style>
+        <Style x:Key="AdditionalWeatherDataLabels" TargetType="Label">
+
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontFamily" Value=""/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="TextColor" Value="CornflowerBlue"/>
+
+        </Style>
+        <Style x:Key="TemperatureLabel" TargetType="Label">
+
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontFamily" Value=""/>
+            <Setter Property="TextColor" Value="Gray"/>
+
+        </Style>
+
+        <!--CollectionVeiw Weather Data Resources-->
+        <Style x:Key="cvImage" TargetType="Image">
+
+            <Setter Property="HeightRequest" Value="50"/>
+            <Setter Property="WidthRequest" Value="50"/>
+            <Setter Property="VerticalOptions" Value="Start"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="Source" Value="{Binding weather[0].apiWeatherImage}"/>
+
+        </Style>
+
+    </ContentPage.Resources>
+
+
+    
+    <!--Page design-->
+
     <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto"
           RowSpacing="20">
         <StackLayout Grid.Row="0" Margin="20,20,20,0"
                      Orientation="Horizontal">
+            <!--Top buttons-->
+            <Button x:Name="LocationButton" Text="Where am I?"
+                    HorizontalOptions="StartAndExpand"                    
+                    Clicked="OnLocationButtonClicked"
+                    Style="{StaticResource TopButtonsStyle}"/>
 
-            <Button Text="Where am I?" FontSize="Default"
-                    FontAttributes="Bold" FontFamily=""
-                    TextColor="CornflowerBlue"
-                    BackgroundColor="Transparent"
-                    HorizontalOptions="StartAndExpand"
-                    x:Name="LocationButton"
-                    Clicked="OnLocationButtonClicked"/>
-
-            <Button Text="Search" FontSize="Default"
-                    FontAttributes="Bold" FontFamily=""
-                    TextColor="CornflowerBlue"
-                    BackgroundColor="Transparent"
-                    HorizontalOptions="EndAndExpand"
-                    x:Name="SearchButton"
-                    Clicked="OnSearchButtonClicked"/>
+            <Button x:Name="SearchButton" Text="Search"
+                    HorizontalOptions="EndAndExpand"                    
+                    Clicked="OnSearchButtonClicked"
+                    Style="{StaticResource TopButtonsStyle}"/>
 
         </StackLayout>
 
+        <!--Main Weather Data-->
         <StackLayout Grid.Row="1" Orientation="Vertical">
-
+            
             <Label x:Name="cityLabel"
-                   FontSize="50" TextColor="Grey"
-                   FontFamily=""
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"/>
+                   Style="{StaticResource CityLabel}"/>
 
             <Image x:Name="weatherConditionsImage"
                VerticalOptions="Start"
@@ -44,51 +110,43 @@
 
         <Label x:Name="weatherConditionsLabel"
                Grid.Row="2"
-               FontSize="Default" TextColor="Grey"
-               HorizontalOptions="Center"/>       
+               Style="{StaticResource WeatherConditionsLabel}"/>       
 
+
+        <!--Additional weather data-->
         <Grid Grid.Row="3"
               RowDefinitions="Auto, Auto"
               ColumnDefinitions="0.33*, 0.33*, 0.33*"
               Margin="20">
+
             <!--left--> 
             <Image Grid.Row="0" Grid.Column="0"
-                   HorizontalOptions="Center"
-                   HeightRequest="50"
+                   Style="{StaticResource AdditionalWeatherDataImages}"
                    Source="hydrometer.png"/>
 
             <Label x:Name="hydrometerValueLabel"
                    Grid.Row="1" Grid.Column="0"
-                   HorizontalOptions="Center"                   
-                   FontAttributes="Bold"
-                   TextColor="CornflowerBlue"
-                   FontFamily=""/>
+                   Style="{StaticResource AdditionalWeatherDataLabels}"/>
 
             <!--center-->
             <Label x:Name="temperatureValueLabel"
                    Grid.Row="0" Grid.Column="1"
                    Grid.RowSpan="2"
-                   HorizontalOptions="Center"
-                   FontSize="40"
-                   FontAttributes="Bold"
-                   FontFamily=""
-                   TextColor="Grey"/>
+                   Style="{StaticResource TemperatureLabel}"/>
 
             <!--right-->
             <Image Grid.Row="0" Grid.Column="2"
-                   HorizontalOptions="Center"
-                   HeightRequest="50"
+                   Style="{StaticResource AdditionalWeatherDataImages}"
                    Source="wind.png"/>
 
             <Label x:Name="windSpeedLabel"
                    Grid.Row="1" Grid.Column="2"
-                   HorizontalOptions="Center"                   
-                   FontAttributes="Bold"
-                   TextColor="CornflowerBlue"
-                   FontFamily=""/>
+                   Style="{StaticResource AdditionalWeatherDataLabels}"/>
 
         </Grid>
 
+
+        <!--Deatiled weather-->
         <CollectionView x:Name="detailedWeatherDataView"
                         Grid.Row="4" HeightRequest="100">
 
@@ -109,11 +167,7 @@
                                Text="{Binding dateTime}"/>
 
                         <Image Grid.Row="1"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Start"
-                               HeightRequest="50"
-                               WidthRequest="50"
-                               Source="{Binding weather[0].apiWeatherImage}"/>
+                               Style="{StaticResource cvImage}"/>
 
                         <Label Grid.Row="2"
                                FontSize="Large"
