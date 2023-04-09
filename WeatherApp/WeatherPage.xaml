@@ -28,6 +28,14 @@
 
         </Style>
 
+        <Style x:Key="WeatherConditionsLabel" TargetType="Label">
+
+            <Setter Property="FontSize" Value="Default"/>
+            <Setter Property="TextColor" Value="Grey"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+
+        </Style>
+
     </ContentPage.Resources>
 
 
@@ -63,8 +71,7 @@
 
         <Label x:Name="weatherConditionsLabel"
                Grid.Row="2"
-               FontSize="Default" TextColor="Grey"
-               HorizontalOptions="Center"/>       
+               Style="{StaticResource WeatherConditionsLabel}"/>       
 
         <!--Additional weathet data-->
         <Grid Grid.Row="3"
