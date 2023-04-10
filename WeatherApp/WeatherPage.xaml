@@ -27,7 +27,7 @@
             <Setter Property="FontSize" Value="Default"/>
             <Setter Property="FontAttributes" Value="Bold"/>
             <Setter Property="FontFamily" Value=""/>
-            <Setter Property="TextColor" Value="CornflowerBlue"/>
+            <Setter Property="TextColor" Value="DeepSkyBlue"/>
             <Setter Property="BackgroundColor" Value="Transparent"/>
 
         </Style>
@@ -35,7 +35,7 @@
         <Style x:Key="CityLabel" TargetType="Label">
 
             <Setter Property="FontSize" Value="50"/>
-            <Setter Property="TextColor" Value="Gray"/>
+            <Setter Property="TextColor" Value="White"/>
             <Setter Property="FontFamily" Value=""/>
             <Setter Property="FontAttributes" Value="Bold"/>
             <Setter Property="HorizontalOptions" Value="Center"/>
@@ -45,7 +45,7 @@
         <Style x:Key="WeatherConditionsLabel" TargetType="Label">
 
             <Setter Property="FontSize" Value="Default"/>
-            <Setter Property="TextColor" Value="Gray"/>
+            <Setter Property="TextColor" Value="White"/>
             <Setter Property="HorizontalOptions" Value="Center"/>
 
         </Style>
@@ -62,7 +62,7 @@
             <Setter Property="FontAttributes" Value="Bold"/>
             <Setter Property="FontFamily" Value=""/>
             <Setter Property="HorizontalOptions" Value="Center"/>
-            <Setter Property="TextColor" Value="CornflowerBlue"/>
+            <Setter Property="TextColor" Value="DeepSkyBlue"/>
 
         </Style>
         <Style x:Key="TemperatureLabel" TargetType="Label">
@@ -71,7 +71,7 @@
             <Setter Property="FontSize" Value="40"/>
             <Setter Property="FontAttributes" Value="Bold"/>
             <Setter Property="FontFamily" Value=""/>
-            <Setter Property="TextColor" Value="Gray"/>
+            <Setter Property="TextColor" Value="White"/>
 
         </Style>
 
