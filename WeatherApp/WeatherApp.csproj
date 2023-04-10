@@ -80,6 +80,8 @@
 	  <None Remove="Resources\Images\icon_50d.png" />
 	  <None Remove="Resources\Images\icon_50n.png" />
 	  <None Remove="Resources\Images\wind.png" />
+	  <None Remove="Resources\Fonts\RobotoCondensed-Regular.ttf" />
+	  <None Remove="Resources\Fonts\RobotoCondensed-Bold.ttf" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Models\" />
