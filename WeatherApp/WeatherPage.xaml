@@ -2,8 +2,21 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherApp.WeatherPage"
-             Title="WeatherPage"
-             BackgroundColor="White">
+             Title="WeatherPage">
+
+    <!--Page Background-->
+    <ContentPage.Background>
+
+        <LinearGradientBrush EndPoint="1,2">
+                <GradientStop Color="#8C82D5"
+                          Offset="0.1" />
+                <GradientStop Color="#7929EF"
+                          Offset="1.9" />
+            </LinearGradientBrush>
+
+    </ContentPage.Background>
+
+
 
     <!--Resources-->
     <ContentPage.Resources>
@@ -14,7 +27,7 @@
             <Setter Property="FontSize" Value="Default"/>
             <Setter Property="FontAttributes" Value="Bold"/>
             <Setter Property="FontFamily" Value=""/>
-            <Setter Property="TextColor" Value="CornflowerBlue"/>
+            <Setter Property="TextColor" Value="DeepSkyBlue"/>
             <Setter Property="BackgroundColor" Value="Transparent"/>
 
         </Style>
@@ -22,8 +35,8 @@
         <Style x:Key="CityLabel" TargetType="Label">
 
             <Setter Property="FontSize" Value="50"/>
-            <Setter Property="TextColor" Value="Gray"/>
-            <Setter Property="FontFamily" Value=""/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontFamily" Value="NewFont"/>
             <Setter Property="FontAttributes" Value="Bold"/>
             <Setter Property="HorizontalOptions" Value="Center"/>
 
@@ -32,8 +45,9 @@
         <Style x:Key="WeatherConditionsLabel" TargetType="Label">
 
             <Setter Property="FontSize" Value="Default"/>
-            <Setter Property="TextColor" Value="Gray"/>
+            <Setter Property="TextColor" Value="White"/>
             <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="FontFamily" Value="NewFont"/>
 
         </Style>
 
@@ -47,9 +61,9 @@
         <Style x:Key="AdditionalWeatherDataLabels" TargetType="Label">
 
             <Setter Property="FontAttributes" Value="Bold"/>
-            <Setter Property="FontFamily" Value=""/>
+            <Setter Property="FontFamily" Value="NewFont"/>
             <Setter Property="HorizontalOptions" Value="Center"/>
-            <Setter Property="TextColor" Value="CornflowerBlue"/>
+            <Setter Property="TextColor" Value="DeepSkyBlue"/>
 
         </Style>
         <Style x:Key="TemperatureLabel" TargetType="Label">
@@ -57,8 +71,8 @@
             <Setter Property="HorizontalOptions" Value="Center"/>
             <Setter Property="FontSize" Value="40"/>
             <Setter Property="FontAttributes" Value="Bold"/>
-            <Setter Property="FontFamily" Value=""/>
-            <Setter Property="TextColor" Value="Gray"/>
+            <Setter Property="FontFamily" Value="NewFont"/>
+            <Setter Property="TextColor" Value="White"/>
 
         </Style>
 
@@ -163,6 +177,9 @@
 
                         <Label Grid.Row="0"
                                FontSize="Small"
+                               FontAttributes="Bold"
+                               FontFamily="NewFont"
+                               TextColor="White"
                                HorizontalOptions="Center"
                                Text="{Binding dateTime}"/>
 
@@ -171,6 +188,9 @@
 
                         <Label Grid.Row="2"
                                FontSize="Large"
+                               FontAttributes="Bold"
+                               FontFamily="NewFont"
+                               TextColor="White"
                                HorizontalOptions="Center"
                                Text="{Binding main.convertedTemp, StringFormat='{0}°C'}"/>                        
 
