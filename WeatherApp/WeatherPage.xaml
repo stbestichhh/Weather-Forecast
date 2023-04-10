@@ -178,6 +178,7 @@
                                FontSize="Small"
                                FontAttributes="Bold"
                                FontFamily=""
+                               TextColor="White"
                                HorizontalOptions="Center"
                                Text="{Binding dateTime}"/>
 
@@ -188,6 +189,7 @@
                                FontSize="Large"
                                FontAttributes="Bold"
                                FontFamily=""
+                               TextColor="White"
                                HorizontalOptions="Center"
                                Text="{Binding main.convertedTemp, StringFormat='{0}°C'}"/>                        
 
