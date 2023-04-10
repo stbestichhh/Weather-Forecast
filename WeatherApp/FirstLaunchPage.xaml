@@ -2,8 +2,21 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherApp.FirstLaunchPage"
-             Title="FirstLaunchPage"
-             BackgroundColor="White">
+             Title="FirstLaunchPage">
+
+    <!--Page Background-->
+    <ContentPage.Background>
+
+        <LinearGradientBrush EndPoint="1,2">
+                <GradientStop Color="#8C82D5"
+                          Offset="0.1" />
+                <GradientStop Color="#7929EF"
+                          Offset="1.9" />
+            </LinearGradientBrush>
+
+    </ContentPage.Background>
+
+
 
     <!--Resources-->
     <ContentPage.Resources>
@@ -11,10 +24,10 @@
         <Style x:Key="ButtonStyle" TargetType="Button">
 
             <Setter Property="FontSize" Value="Large"/>
-            <Setter Property="TextColor" Value="CornflowerBlue"/>
+            <Setter Property="TextColor" Value="DeepSkyBlue"/>
             <Setter Property="FontAttributes" Value="Bold"/>
             <Setter Property="FontFamily" Value=""/>
-            <Setter Property="BackgroundColor" Value="GhostWhite"/>
+            <Setter Property="BackgroundColor" Value="#8C82D5"/>
             <Setter Property="CornerRadius" Value="35"/>
             <Setter Property="WidthRequest" Value="180"/>
             <Setter Property="HeightRequest" Value="66"/>
@@ -29,11 +42,11 @@
     <!--Page Design-->
     <StackLayout VerticalOptions="Center" Margin="20" Padding="0">
 
-        <Label Text="Weather" FontSize="50" TextColor="CornflowerBlue"
+        <Label Text="Weather" FontSize="50" TextColor="DeepSkyBlue"
                FontAttributes="Bold" FontFamily="" HorizontalOptions="EndAndExpand"/>
 
         <Label Text="by stbestichhh" FontSize="15"
-               FontAttributes="Bold" FontFamily="" TextColor="CornflowerBlue"
+               FontAttributes="Bold" FontFamily="" TextColor="DeepSkyBlue"
                HorizontalOptions="EndAndExpand"/>
 
         <Button x:Name="StartButton" Text="See forecast"
