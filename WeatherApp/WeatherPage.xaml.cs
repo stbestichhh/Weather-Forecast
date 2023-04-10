@@ -4,14 +4,12 @@ namespace WeatherApp;
 
 public partial class WeatherPage : ContentPage
 {
-    public List<Models.List> WeatherList;
     public double latitude;
     public double longitude;
 
     public WeatherPage()
     {
         InitializeComponent();
-        WeatherList = new List<Models.List>();
     }
 
     protected async override void OnAppearing()
@@ -64,11 +62,7 @@ public partial class WeatherPage : ContentPage
 
     public void UpdateUI(dynamic getWeather)
     {
-        foreach (var weatherOption in getWeather.list)
-        {
-            WeatherList.Add(weatherOption);
-        }
-        detailedWeatherDataView.ItemsSource = WeatherList;
+        detailedWeatherDataView.ItemsSource = getWeather.list;
 
         cityLabel.Text = getWeather.city.name; //city name
         weatherConditionsLabel.Text = getWeather.list[0].weather[0].description; //weather description
