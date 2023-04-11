@@ -203,9 +203,7 @@
                             </StackLayout>
 
                         </Frame>
-                        
-                                            
-
+                                                                    
                     </Grid>
 
                 </DataTemplate>
