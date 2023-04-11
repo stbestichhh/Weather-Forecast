@@ -64,14 +64,7 @@
 
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Grid.Row="1"
-                          RowDefinitions="10*,10*,10*,10*,10*,10*"
-                          ColumnDefinitions="10*, 10*">
-
-                        <!--CollectionView 12 Elements-->
-
-
-                    </Grid>
+                    
 
                 </DataTemplate>
 
