@@ -50,7 +50,31 @@
 
 
         <!--Detailed Weather Data-->
-        
+        <CollectionView x:Name="DetailedDataCV"
+                        Grid.Row="1">
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical"
+                                   ItemSpacing="10">
+                </LinearItemsLayout>
+
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Grid.Row="1"
+                          RowDefinitions="10*,10*,10*,10*,10*,10*"
+                          ColumnDefinitions="10*, 10*">
+
+
+
+                    </Grid>
+
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
 
     </Grid>
 
