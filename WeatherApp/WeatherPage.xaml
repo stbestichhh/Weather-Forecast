@@ -12,7 +12,7 @@
                           Offset="0.1" />
                 <GradientStop Color="#7929EF"
                           Offset="1.9" />
-            </LinearGradientBrush>
+        </LinearGradientBrush>
 
     </ContentPage.Background>
 
@@ -162,11 +162,12 @@
 
         <!--Deatiled weather-->
         <CollectionView x:Name="detailedWeatherDataView"
-                        Grid.Row="4" HeightRequest="100">
+                        Grid.Row="4" HeightRequest="140"
+                        Margin="0,5,0,0">
 
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal"
-                                   ItemSpacing="20">
+                                   ItemSpacing="10">
                 </LinearItemsLayout>
             </CollectionView.ItemsLayout>
 
@@ -175,29 +176,39 @@
 
                     <Grid Grid.Row="4" RowDefinitions="Auto, Auto, Auto">
 
-                        <Label Grid.Row="0"
-                               FontSize="Small"
-                               FontAttributes="Bold"
-                               FontFamily="NewFont"
-                               TextColor="White"
-                               HorizontalOptions="Center"
-                               Text="{Binding dateTime}"/>
+                        <Frame BackgroundColor="#8C82D5"
+                               BorderColor="Transparent"
+                               CornerRadius="25">
 
-                        <Image Grid.Row="1"
-                               Style="{StaticResource cvImage}"/>
+                            <StackLayout>
+                                <Label Grid.Row="0"
+                                       FontSize="Small"
+                                       FontAttributes="Bold"
+                                       FontFamily="NewFont"
+                                       TextColor="White"
+                                       HorizontalOptions="Center"
+                                       Text="{Binding dateTime}"/>
 
-                        <Label Grid.Row="2"
-                               FontSize="Large"
-                               FontAttributes="Bold"
-                               FontFamily="NewFont"
-                               TextColor="White"
-                               HorizontalOptions="Center"
-                               Text="{Binding main.convertedTemp, StringFormat='{0}°C'}"/>                        
+                                <Image Grid.Row="1"
+                                       Style="{StaticResource cvImage}"/>
+
+                                <Label Grid.Row="2"
+                                       FontSize="Large"
+                                       FontAttributes="Bold"
+                                       FontFamily="NewFont"
+                                       TextColor="White"
+                                       HorizontalOptions="Center"
+                                       Text="{Binding main.convertedTemp, StringFormat='{0}°C'}"/>    
+
+                            </StackLayout>
+
+                        </Frame>
+                        
+                                            
 
                     </Grid>
 
                 </DataTemplate>
-
             </CollectionView.ItemTemplate>
 
         </CollectionView>
