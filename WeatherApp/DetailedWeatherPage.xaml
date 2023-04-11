@@ -4,6 +4,7 @@
              x:Class="WeatherApp.DetailedWeatherPage"
              Title="DetailedWeatherPage">
 
+    <!--Background-->
     <ContentPage.Background>
 
         <LinearGradientBrush EndPoint="1,2">
@@ -14,5 +15,43 @@
         </LinearGradientBrush>
 
     </ContentPage.Background>
+
+
+    <!--Resources-->
+    <ContentPage.Resources>
+
+        <Style x:Key="TopButtonsStyle" TargetType="Button">
+
+            <Setter Property="FontSize" Value="Default"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontFamily" Value=""/>
+            <Setter Property="TextColor" Value="DeepSkyBlue"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+
+        </Style>
+
+    </ContentPage.Resources>
+
+
+
+    <Grid RowDefinitions="Auto, Auto" RowSpacing="5">
+
+        <!--Go Back Button-->
+        <HorizontalStackLayout Grid.Row="0"
+                               Grid.Column="0"
+                               Margin="10,10,10,10">
+
+            <Button x:Name="goBackButton" Text="Return"
+                    HorizontalOptions="StartAndExpand"
+                    Clicked="goBackButton_Clicked"
+                    Style="{StaticResource TopButtonsStyle}"/>
+
+        </HorizontalStackLayout>
+
+
+        <!--Detailed Weather Data-->
+        
+
+    </Grid>
 
 </ContentPage>
