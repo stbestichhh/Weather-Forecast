@@ -31,17 +31,49 @@
 
         </Style>
 
+        <Style x:Key="DateResources" TargetType="Label">
+
+            <Setter Property="FontSize" Value="50"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontFamily" Value="NewFont"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+
+        </Style>
+
+
+        <!--DetailedWeatherGrid-->
+        <Style x:Key="WeatherGrid" TargetType="Grid">
+
+            <Setter Property="HeightRequest" Value="500"/>
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            <Setter Property="RowSpacing" Value="10"/>
+            <Setter Property="ColumnSpacing" Value="10"/>
+            <Setter Property="Margin" Value="20"/>            
+
+        </Style>
+
+
+
+        <!--Frames style-->
+        <Style x:Key="FramesStyle" TargetType="Frame">
+
+            <Setter Property="BackgroundColor" Value="#8C82D5"/>
+            <Setter Property="BorderColor" Value="Transparent"/>
+            <Setter Property="CornerRadius" Value="25"/>
+
+        </Style>
+
     </ContentPage.Resources>
 
 
 
     <!--Page design-->
-    <Grid RowDefinitions="Auto, Auto" RowSpacing="5">
+    <Grid RowDefinitions="Auto, Auto, Auto" RowSpacing="5">
 
         <!--Go Back Button-->
-        <HorizontalStackLayout Grid.Row="0"
-                               Grid.Column="0"
-                               Margin="10,10,10,10">
+        <HorizontalStackLayout Grid.Row="0"                               
+                               Margin="10">
 
             <Button x:Name="goBackButton" Text="Return"
                     HorizontalOptions="StartAndExpand"
@@ -50,27 +82,62 @@
 
         </HorizontalStackLayout>
 
+        <!--Today's date-->
+        <HorizontalStackLayout Grid.Row="1"
+                               Margin="10,10,0,10"
+                               HorizontalOptions="Center">
+
+            <Label x:Name="todaysDate" Text="Date"
+                   Style="{StaticResource DateResources}"/>
+
+        </HorizontalStackLayout>
+
+
 
         <!--Detailed Weather Data-->
-        <CollectionView x:Name="DetailedDataCV"
-                        Grid.Row="1">
+        <Grid Grid.Row="2" Style="{StaticResource WeatherGrid}"
+              RowDefinitions="50*, 50*, 50*"
+              ColumnDefinitions="50*, 50*">
 
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Vertical"
-                                   ItemSpacing="10">
-                </LinearItemsLayout>
+            <!--Column 1-->
+            <Frame Grid.Row="0" Grid.Column="0"
+                   Style="{StaticResource FramesStyle}">
 
-            </CollectionView.ItemsLayout>
 
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    
+            </Frame>
 
-                </DataTemplate>
+            <Frame Grid.Row="1" Grid.Column="0"
+                   Style="{StaticResource FramesStyle}">
 
-            </CollectionView.ItemTemplate>
 
-        </CollectionView>
+            </Frame>
+
+            <Frame Grid.Row="2" Grid.Column="0"
+                   Style="{StaticResource FramesStyle}">
+
+
+            </Frame>
+
+            <!--Column 2-->
+            <Frame Grid.Row="0" Grid.Column="1"
+                   Style="{StaticResource FramesStyle}">
+
+
+            </Frame>
+
+            <Frame Grid.Row="1" Grid.Column="1"
+                   Style="{StaticResource FramesStyle}">
+
+
+            </Frame>
+
+            <Frame Grid.Row="2" Grid.Column="1"
+                   Style="{StaticResource FramesStyle}">
+
+
+            </Frame>
+
+        </Grid>
 
     </Grid>
 
