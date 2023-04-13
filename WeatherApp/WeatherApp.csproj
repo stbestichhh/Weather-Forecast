@@ -82,6 +82,13 @@
 	  <None Remove="Resources\Images\wind.png" />
 	  <None Remove="Resources\Fonts\RobotoCondensed-Regular.ttf" />
 	  <None Remove="Resources\Fonts\RobotoCondensed-Bold.ttf" />
+	  <None Remove="Resources\Images\preassure.png" />
+	  <None Remove="Resources\Images\humidity.png" />
+	  <None Remove="Resources\Images\minMax.png" />
+	  <None Remove="Resources\Images\sunrise.png" />
+	  <None Remove="Resources\Images\sunset.png" />
+	  <None Remove="Resources\Images\thermometer.png" />
+	  <None Remove="Resources\Images\windsSpeed.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Models\" />
@@ -108,5 +115,12 @@
 	  <BundleResource Include="Resources\Images\icon_50d.png" />
 	  <BundleResource Include="Resources\Images\icon_50n.png" />
 	  <BundleResource Include="Resources\Images\wind.png" />
+	  <BundleResource Include="Resources\Images\preassure.png" />
+	  <BundleResource Include="Resources\Images\humidity.png" />
+	  <BundleResource Include="Resources\Images\min_max.png" />
+	  <BundleResource Include="Resources\Images\sunrise.png" />
+	  <BundleResource Include="Resources\Images\sunset.png" />
+	  <BundleResource Include="Resources\Images\thermometer.png" />
+	  <BundleResource Include="Resources\Images\windspeed.png" />
 	</ItemGroup>
 </Project>
