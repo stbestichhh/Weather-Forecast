@@ -71,4 +71,10 @@ public partial class WeatherPage : ContentPage
         windSpeedLabel.Text = getWeather.list[0].wind.speedInMeters + " m/s"; //wind speed
         weatherConditionsImage.Source = getWeather.list[0].weather[0].weatherImage; //weather image
     }
+
+    //See detailed weather page
+    void TapRecognizer_Tapped(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
+    {
+        Navigation.PushModalAsync(new DetailedWeatherPage());
+    }
 }
