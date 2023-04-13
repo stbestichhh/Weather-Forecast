@@ -171,7 +171,7 @@
         <!--Deatiled weather-->
         <CollectionView x:Name="detailedWeatherDataView"
                         Grid.Row="4" HeightRequest="140"
-                        Margin="0,5,0,0">
+                        Margin="0,10,0,0">
 
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal"
@@ -201,13 +201,20 @@
                                        FontSize="Large"
                                        Style="{StaticResource labelsCv}"
                                        Text="{Binding main.convertedTemp, StringFormat='{0}°C'}"/>    
+                                       FontAttributes="Bold"
+                                       FontFamily="NewFont"
+                                       TextColor="White"
+                                       HorizontalOptions="Center"
+                                       Text="{Binding main.convertedTemp, StringFormat='{0}°C'}"/>
 
                             </StackLayout>
 
-                        </Frame>
-                        
-                                            
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="TapRecognizer" Tapped="TapRecognizer_Tapped"/>
+                            </Frame.GestureRecognizers>
 
+                        </Frame>
+                                                                    
                     </Grid>
 
                 </DataTemplate>

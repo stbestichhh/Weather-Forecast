@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherApp.DetailedWeatherPage"
+             Title="DetailedWeatherPage">
+
+    <!--Background-->
+    <ContentPage.Background>
+
+        <LinearGradientBrush EndPoint="1,2">
+                <GradientStop Color="#8C82D5"
+                          Offset="0.1" />
+                <GradientStop Color="#7929EF"
+                          Offset="1.9" />
+        </LinearGradientBrush>
+
+    </ContentPage.Background>
+
+
+
+    <!--Resources-->
+    <ContentPage.Resources>
+
+        <Style x:Key="TopButtonsStyle" TargetType="Button">
+
+            <Setter Property="FontSize" Value="Default"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontFamily" Value=""/>
+            <Setter Property="TextColor" Value="DeepSkyBlue"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+
+        </Style>
+
+        <Style x:Key="DateResources" TargetType="Label">
+
+            <Setter Property="FontSize" Value="50"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontFamily" Value="NewFont"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+
+        </Style>
+
+
+        <!--DetailedWeatherGrid-->
+        <Style x:Key="WeatherGrid" TargetType="Grid">
+
+            <Setter Property="HeightRequest" Value="500"/>
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            <Setter Property="RowSpacing" Value="10"/>
+            <Setter Property="ColumnSpacing" Value="10"/>
+            <Setter Property="Margin" Value="20"/>            
+
+        </Style>
+
+
+
+        <!--Frames style-->
+        <Style x:Key="FramesStyle" TargetType="Frame">
+
+            <Setter Property="BackgroundColor" Value="#8C82D5"/>
+            <Setter Property="BorderColor" Value="Transparent"/>
+            <Setter Property="CornerRadius" Value="25"/>
+
+        </Style>
+
+        <Style x:Key="imageStyle" TargetType="Image">
+
+            <Setter Property="HeightRequest" Value="50"/>
+            <Setter Property="WidthRequest" Value="50"/>
+            <Setter Property="HorizontalOptions" Value="Start"/>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+
+        </Style>
+
+        <Style x:Key="labelStyle" TargetType="Label">
+
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="FontFamily" Value="NewFont"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+
+        </Style>
+
+    </ContentPage.Resources>
+
+
+
+    <!--Page design-->
+    <Grid RowDefinitions="Auto, Auto, Auto, 70" RowSpacing="5">
+
+        <!--Go Back Button-->
+        <HorizontalStackLayout Grid.Row="0"                               
+                               Margin="10">
+
+            <Button x:Name="goBackButton" Text="Return"
+                    HorizontalOptions="StartAndExpand"
+                    Clicked="goBackButton_Clicked"
+                    Style="{StaticResource TopButtonsStyle}"/>
+
+        </HorizontalStackLayout>
+
+        <!--Today's date-->
+        <HorizontalStackLayout Grid.Row="1"
+                               Margin="10,10,0,10"
+                               HorizontalOptions="Center">
+
+            <Label x:Name="todaysDate"
+                   Style="{StaticResource DateResources}"/>
+
+        </HorizontalStackLayout>
+
+
+
+        <!--Detailed Weather Data-->
+        <Grid Grid.Row="2" Style="{StaticResource WeatherGrid}"
+              RowDefinitions="50*, 50*, 50*"
+              ColumnDefinitions="50*, 50*">
+
+            <!--Column 1-->
+            <Frame Grid.Row="0" Grid.Column="0"
+                   Style="{StaticResource FramesStyle}">
+                <StackLayout Orientation="Horizontal">
+
+                    <Image Source="thermometer.png"
+                           Style="{StaticResource imageStyle}"/>
+
+                    <Label x:Name="tempLabel" Margin="5,0,0,0"
+                           Style="{StaticResource labelStyle}"/>
+
+                </StackLayout>
+
+            </Frame>
+
+            <Frame Grid.Row="1" Grid.Column="0"
+                   Style="{StaticResource FramesStyle}">
+                <StackLayout Orientation="Horizontal">
+
+                    <Image Source="min_max.png" HeightRequest="50" WidthRequest="50"
+                           VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+
+                    <StackLayout Orientation="Vertical">
+
+                        <Label x:Name="minTempLabel"
+                               HorizontalOptions="Center" VerticalOptions="StartAndExpand" Margin="10,20,0,0"
+                               TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="20"/>
+
+                        <Label x:Name="maxTempLabel"
+                               HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="10,0,0,20"
+                               TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="20"/>
+
+                    </StackLayout>
+                    
+                </StackLayout>
+
+            </Frame>
+
+            <Frame Grid.Row="2" Grid.Column="0"
+                   Style="{StaticResource FramesStyle}">
+                <StackLayout Orientation="Horizontal">
+
+                    <Image Source="preassure.png"
+                           Style="{StaticResource imageStyle}"/>
+
+                    <Label x:Name="preassureLabel" Margin="10,0,0,0"
+                           FontSize="20"
+                           Style="{StaticResource labelStyle}"/>
+
+                </StackLayout>
+
+            </Frame>
+
+            <!--Column 2-->
+            <Frame Grid.Row="0" Grid.Column="1"
+                   Style="{StaticResource FramesStyle}">
+                <StackLayout Orientation="Horizontal">
+
+                    <Image Source="humidity.png"
+                           Style="{StaticResource imageStyle}"/>
+
+                    <Label x:Name="humidityLabel" Margin="13,0,0,0"
+                           Style="{StaticResource labelStyle}"/>
+
+                </StackLayout>
+
+            </Frame>
+
+            <Frame Grid.Row="1" Grid.Column="1"
+                   Style="{StaticResource FramesStyle}">
+                <StackLayout Orientation="Horizontal">
+
+                    <Image Source="windspeed.png"
+                           Style="{StaticResource imageStyle}"/>
+
+                    <Label x:Name="windSpeedLabel" Margin="10,0,0,0"
+                           FontSize="19"
+                           Style="{StaticResource labelStyle}"/>
+
+                </StackLayout>
+
+            </Frame>
+
+            <Frame Grid.Row="2" Grid.Column="1"
+                   Style="{StaticResource FramesStyle}">
+                <StackLayout Orientation="Vertical">
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+
+                        <Image Source="sunrise.png" HeightRequest="50" WidthRequest="50"
+                               VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+
+                        <Label x:Name="sunriseLabel" Margin="10,0,0,0"
+                               HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                               TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="Large"/>
+
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+
+                        <Image Source="sunset.png" HeightRequest="50" WidthRequest="50"
+                               VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+
+                        <Label x:Name="sunsetLabel" Margin="10,0,0,0"
+                               HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                               TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="Large"/>
+
+                    </StackLayout>
+
+                </StackLayout>
+
+            </Frame>
+
+        </Grid>
+
+        <VerticalStackLayout Grid.Row="3"
+                             VerticalOptions="EndAndExpand"
+                             HeightRequest="15" Margin="0">
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+
+                <Label x:Name="cityLabel" FontSize="10"/>
+                <Label x:Name="countryLabel" FontSize="10"/>
+                <Label x:Name="latLabel" FontSize="10"/>
+                <Label x:Name="lonLabel" FontSize="10"/>
+
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+
+                <Label Text="Forecast app developed by " FontSize="10"/>
+                <Label Text="stbestichhh" FontSize="10" TextDecorations="Underline"/>
+
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+
+                <Label Text="Based on " FontSize="10"/>
+                <Label Text="openweathermap.org/api" FontSize="10" TextDecorations="Underline"/>
+
+            </HorizontalStackLayout>
+                        
+        </VerticalStackLayout>
+
+    </Grid>
+
+</ContentPage>
