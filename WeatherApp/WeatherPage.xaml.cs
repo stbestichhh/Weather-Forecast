@@ -6,6 +6,7 @@ public partial class WeatherPage : ContentPage
 {
     public double latitude;
     public double longitude;
+    public static string cityName;
 
     public WeatherPage()
     {
@@ -45,7 +46,11 @@ public partial class WeatherPage : ContentPage
         catch (Exception ex)
         {
             await DisplayAlert(title: "City not found", message:"Make sure the city name is correct and try again.", cancel:"Ok");
-        }        
+        }
+        finally
+        {
+            cityName = searchResponse;
+        }
     }
 
     public async Task GetWeatherByLocationButton(double latitute, double longitude)
