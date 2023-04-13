@@ -198,9 +198,14 @@
                                        FontFamily="NewFont"
                                        TextColor="White"
                                        HorizontalOptions="Center"
-                                       Text="{Binding main.convertedTemp, StringFormat='{0}°C'}"/>    
+                                       Text="{Binding main.convertedTemp, StringFormat='{0}°C'}"/>
+
 
                             </StackLayout>
+
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="TapRecognizer" Tapped="TapRecognizer_Tapped"/>
+                            </Frame.GestureRecognizers>
 
                         </Frame>
                                                                     

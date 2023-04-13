@@ -107,7 +107,7 @@
                                Margin="10,10,0,10"
                                HorizontalOptions="Center">
 
-            <Label x:Name="todaysDate" Text="Date"
+            <Label x:Name="todaysDate"
                    Style="{StaticResource DateResources}"/>
 
         </HorizontalStackLayout>
@@ -127,7 +127,7 @@
                     <Image Source="thermometer.png"
                            Style="{StaticResource imageStyle}"/>
 
-                    <Label x:Name="tempLabel" Text="10*C" Margin="5,0,0,0"
+                    <Label x:Name="tempLabel" Margin="5,0,0,0"
                            Style="{StaticResource labelStyle}"/>
 
                 </StackLayout>
@@ -143,13 +143,13 @@
 
                     <StackLayout Orientation="Vertical">
 
-                        <Label x:Name="minTempLabel" Text="Min: 10*C"
-                               HorizontalOptions="Center" VerticalOptions="StartAndExpand" Margin="5,20,0,0"
-                               TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="17"/>
+                        <Label x:Name="minTempLabel"
+                               HorizontalOptions="Center" VerticalOptions="StartAndExpand" Margin="10,20,0,0"
+                               TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="20"/>
 
-                        <Label x:Name="manTempLabel" Text="Max: 12*C"
-                               HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="5,0,0,20"
-                               TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="17"/>
+                        <Label x:Name="maxTempLabel"
+                               HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="10,0,0,20"
+                               TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="20"/>
 
                     </StackLayout>
                     
@@ -164,7 +164,8 @@
                     <Image Source="preassure.png"
                            Style="{StaticResource imageStyle}"/>
 
-                    <Label x:Name="preassureLabel" Text="10*C" Margin="10,0,0,0"
+                    <Label x:Name="preassureLabel" Margin="10,0,0,0"
+                           FontSize="20"
                            Style="{StaticResource labelStyle}"/>
 
                 </StackLayout>
@@ -179,7 +180,7 @@
                     <Image Source="humidity.png"
                            Style="{StaticResource imageStyle}"/>
 
-                    <Label x:Name="humidityLabel" Text="10*C" Margin="10,0,0,0"
+                    <Label x:Name="humidityLabel" Margin="13,0,0,0"
                            Style="{StaticResource labelStyle}"/>
 
                 </StackLayout>
@@ -193,7 +194,8 @@
                     <Image Source="windspeed.png"
                            Style="{StaticResource imageStyle}"/>
 
-                    <Label x:Name="windSpeedLabel" Text="10*C" Margin="10,0,0,0"
+                    <Label x:Name="windSpeedLabel" Margin="10,0,0,0"
+                           FontSize="19"
                            Style="{StaticResource labelStyle}"/>
 
                 </StackLayout>
@@ -209,7 +211,7 @@
                         <Image Source="sunrise.png" HeightRequest="50" WidthRequest="50"
                                VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
 
-                        <Label x:Name="sunriseLabel" Text="10*C" Margin="10,0,0,0"
+                        <Label x:Name="sunriseLabel" Margin="10,0,0,0"
                                HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
                                TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="Large"/>
 
@@ -220,7 +222,7 @@
                         <Image Source="sunset.png" HeightRequest="50" WidthRequest="50"
                                VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
 
-                        <Label x:Name="sunsetLabel" Text="10*C" Margin="10,0,0,0"
+                        <Label x:Name="sunsetLabel" Margin="10,0,0,0"
                                HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
                                TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="Large"/>
 
@@ -238,10 +240,10 @@
 
             <HorizontalStackLayout HorizontalOptions="Center">
 
-                <Label x:Name="cityLabel" FontSize="10" Text="City,"/>
-                <Label x:Name="countryLabel" FontSize="10" Text=" Country;"/>
-                <Label x:Name="latLabel" FontSize="10" Text=" latitude,"/>
-                <Label x:Name="longitude" FontSize="10" Text=" longitude"/>
+                <Label x:Name="cityLabel" FontSize="10"/>
+                <Label x:Name="countryLabel" FontSize="10"/>
+                <Label x:Name="latLabel" FontSize="10"/>
+                <Label x:Name="lonLabel" FontSize="10"/>
 
             </HorizontalStackLayout>
 
