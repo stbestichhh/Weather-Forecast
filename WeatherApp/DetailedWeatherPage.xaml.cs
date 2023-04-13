@@ -1,4 +1,6 @@
-﻿namespace WeatherApp;
+﻿using System.Windows.Input;
+
+namespace WeatherApp;
 
 public partial class DetailedWeatherPage : ContentPage
 {
