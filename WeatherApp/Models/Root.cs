@@ -10,8 +10,11 @@ namespace WeatherApp.Models
         public string country { get; set; }
         public int population { get; set; }
         public int timezone { get; set; }
+
         public int sunrise { get; set; }
+        public string sunriseTime => UtcTimeLibrary.UtcTimeStamp.ConvertToUtc(sunrise);
         public int sunset { get; set; }
+        public string sunsetTime => UtcTimeLibrary.UtcTimeStamp.ConvertToUtc(sunset);
     }
 
     public class Clouds
@@ -29,6 +32,7 @@ namespace WeatherApp.Models
     {
         public int dt { get; set; }
         public string dateTime => UtcTimeLibrary.UtcTimeStamp.ConvertToUtc(dt);
+
         public Main main { get; set; }
         public List<Weather> weather { get; set; }
         public Clouds clouds { get; set; }
@@ -43,9 +47,14 @@ namespace WeatherApp.Models
     {
         public double temp { get; set; }
         public double convertedTemp => Math.Round(temp);
+
         public double feels_like { get; set; }
+
         public double temp_min { get; set; }
         public double temp_max { get; set; }
+        public double convertedMinTemp => Math.Round(temp_min);
+        public double convertedMaxTemp => Math.Round(temp_max);
+
         public int pressure { get; set; }
         public int sea_level { get; set; }
         public int grnd_level { get; set; }
@@ -81,6 +90,7 @@ namespace WeatherApp.Models
     {
         public double speed { get; set; }
         public double speedInMeters => Math.Round(speed / 3.6, 1);
+
         public int deg { get; set; }
         public double gust { get; set; }
     }

@@ -6,6 +6,7 @@ public partial class WeatherPage : ContentPage
 {
     public double latitude;
     public double longitude;
+    public static string cityName;
 
     public WeatherPage()
     {
@@ -45,7 +46,11 @@ public partial class WeatherPage : ContentPage
         catch (Exception ex)
         {
             await DisplayAlert(title: "City not found", message:"Make sure the city name is correct and try again.", cancel:"Ok");
-        }        
+        }
+        finally
+        {
+            cityName = searchResponse;
+        }
     }
 
     public async Task GetWeatherByLocationButton(double latitute, double longitude)
@@ -70,5 +75,11 @@ public partial class WeatherPage : ContentPage
         hydrometerValueLabel.Text = getWeather.list[0].main.humidity + " %"; //humidity - (ru)влажность
         windSpeedLabel.Text = getWeather.list[0].wind.speedInMeters + " m/s"; //wind speed
         weatherConditionsImage.Source = getWeather.list[0].weather[0].weatherImage; //weather image
+    }
+
+    //See detailed weather page
+    void TapRecognizer_Tapped(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
+    {
+        Navigation.PushModalAsync(new DetailedWeatherPage());
     }
 }
