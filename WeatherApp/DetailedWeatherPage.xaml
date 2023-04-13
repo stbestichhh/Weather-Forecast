@@ -104,10 +104,10 @@
                    Style="{StaticResource FramesStyle}">
                 <StackLayout Orientation="Horizontal">
 
-                    <Image Source="thermometer.png" HeightRequest="70" WidthRequest="70"
+                    <Image Source="thermometer.png" HeightRequest="50" WidthRequest="50"
                            VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
 
-                    <Label x:Name="tempLabel" Text="10*C"
+                    <Label x:Name="tempLabel" Text="10*C" Margin="5,0,0,0"
                            HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
                            TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="Large"/>
 
@@ -117,21 +117,37 @@
 
             <Frame Grid.Row="1" Grid.Column="0"
                    Style="{StaticResource FramesStyle}">
-                <StackLayout>
+                <StackLayout Orientation="Horizontal">
 
-                    <Label/>
-                    <Label/>
+                    <Image Source="min_max.png" HeightRequest="50" WidthRequest="50"
+                           VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
 
+                    <StackLayout Orientation="Vertical">
+
+                        <Label x:Name="minTempLabel" Text="Min: 10*C"
+                               HorizontalOptions="Center" VerticalOptions="StartAndExpand" Margin="5,20,0,0"
+                               TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="17"/>
+
+                        <Label x:Name="manTempLabel" Text="Max: 12*C"
+                               HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="5,0,0,20"
+                               TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="17"/>
+
+                    </StackLayout>
+                    
                 </StackLayout>
 
             </Frame>
 
             <Frame Grid.Row="2" Grid.Column="0"
                    Style="{StaticResource FramesStyle}">
-                <StackLayout>
+                <StackLayout Orientation="Horizontal">
 
-                    <Image/>
-                    <Label/>
+                    <Image Source="preassure.png" HeightRequest="50" WidthRequest="50"
+                           VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+
+                    <Label x:Name="preassureLabel" Text="10*C" Margin="10,0,0,0"
+                           HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                           TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="Large"/>
 
                 </StackLayout>
 
@@ -140,10 +156,14 @@
             <!--Column 2-->
             <Frame Grid.Row="0" Grid.Column="1"
                    Style="{StaticResource FramesStyle}">
-                <StackLayout>
+                <StackLayout Orientation="Horizontal">
 
-                    <Image/>
-                    <Label/>
+                    <Image Source="humidity.png" HeightRequest="50" WidthRequest="50"
+                           VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+
+                    <Label x:Name="humidityLabel" Text="10*C" Margin="10,0,0,0"
+                           HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                           TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="Large"/>
 
                 </StackLayout>
 
@@ -151,10 +171,14 @@
 
             <Frame Grid.Row="1" Grid.Column="1"
                    Style="{StaticResource FramesStyle}">
-                <StackLayout>
+                <StackLayout Orientation="Horizontal">
 
-                    <Image/>
-                    <Label/>
+                    <Image Source="windspeed.png" HeightRequest="50" WidthRequest="50"
+                           VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+
+                    <Label x:Name="windSpeedLabel" Text="10*C" Margin="10,0,0,0"
+                           HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                           TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="Large"/>
 
                 </StackLayout>
 
@@ -162,10 +186,29 @@
 
             <Frame Grid.Row="2" Grid.Column="1"
                    Style="{StaticResource FramesStyle}">
-                <StackLayout>
+                <StackLayout Orientation="Vertical">
 
-                    <Label/>
-                    <Label/>
+                    <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+
+                        <Image Source="sunrise.png" HeightRequest="50" WidthRequest="50"
+                               VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+
+                        <Label x:Name="sunriseLabel" Text="10*C" Margin="10,0,0,0"
+                               HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                               TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="Large"/>
+
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+
+                        <Image Source="sunset.png" HeightRequest="50" WidthRequest="50"
+                               VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+
+                        <Label x:Name="sunsetLabel" Text="10*C" Margin="10,0,0,0"
+                               HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                               TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="Large"/>
+
+                    </StackLayout>
 
                 </StackLayout>
 
