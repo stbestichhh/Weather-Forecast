@@ -117,10 +117,10 @@
 	  <BundleResource Include="Resources\Images\wind.png" />
 	  <BundleResource Include="Resources\Images\preassure.png" />
 	  <BundleResource Include="Resources\Images\humidity.png" />
-	  <BundleResource Include="Resources\Images\minMax.png" />
+	  <BundleResource Include="Resources\Images\min_max.png" />
 	  <BundleResource Include="Resources\Images\sunrise.png" />
 	  <BundleResource Include="Resources\Images\sunset.png" />
 	  <BundleResource Include="Resources\Images\thermometer.png" />
-	  <BundleResource Include="Resources\Images\windsSpeed.png" />
+	  <BundleResource Include="Resources\Images\windspeed.png" />
 	</ItemGroup>
 </Project>

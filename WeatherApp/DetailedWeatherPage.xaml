@@ -104,7 +104,7 @@
                    Style="{StaticResource FramesStyle}">
                 <StackLayout>
 
-                    <Image/>
+                    <Image Source="thermometer.png"/>
                     <Label/>
 
                 </StackLayout>
