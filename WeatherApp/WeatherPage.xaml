@@ -200,12 +200,7 @@
                                 <Label Grid.Row="2"
                                        FontSize="Large"
                                        Style="{StaticResource labelsCv}"
-                                       Text="{Binding main.convertedTemp, StringFormat='{0}°C'}"/>    
-                                       FontAttributes="Bold"
-                                       FontFamily="NewFont"
-                                       TextColor="White"
-                                       HorizontalOptions="Center"
-                                       Text="{Binding main.convertedTemp, StringFormat='{0}°C'}"/>
+                                       Text="{Binding main.convertedTemp, StringFormat='{0}°C'}"/>                                          
 
                             </StackLayout>
 
