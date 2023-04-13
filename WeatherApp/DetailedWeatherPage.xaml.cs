@@ -9,5 +9,10 @@ public partial class DetailedWeatherPage : ContentPage
 
     void goBackButton_Clicked(System.Object sender, System.EventArgs e)
     {
+        Navigation.PushModalAsync(new WeatherPage());
     }
+
+
+    //Weather Data Code
+
 }
