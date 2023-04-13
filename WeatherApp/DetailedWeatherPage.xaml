@@ -216,12 +216,34 @@
 
         </Grid>
 
-        <HorizontalStackLayout Grid.Row="3" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
+        <VerticalStackLayout Grid.Row="3"
+                             VerticalOptions="EndAndExpand"
+                             HeightRequest="15" Margin="0">
 
-            <Label Text="longtitude"/>
-            <Label Text="latitude"/>
+            <HorizontalStackLayout HorizontalOptions="Center">
 
-        </HorizontalStackLayout>
+                <Label x:Name="cityLabel" FontSize="10" Text="City,"/>
+                <Label x:Name="countryLabel" FontSize="10" Text=" Country;"/>
+                <Label x:Name="latLabel" FontSize="10" Text=" latitude,"/>
+                <Label x:Name="longitude" FontSize="10" Text=" longitude"/>
+
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+
+                <Label Text="Forecast app developed by " FontSize="10"/>
+                <Label Text="stbestichhh" FontSize="10" TextDecorations="Underline"/>
+
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+
+                <Label Text="Based on " FontSize="10"/>
+                <Label Text="openweathermap.org/api" FontSize="10" TextDecorations="Underline"/>
+
+            </HorizontalStackLayout>
+                        
+        </VerticalStackLayout>
 
     </Grid>
 
