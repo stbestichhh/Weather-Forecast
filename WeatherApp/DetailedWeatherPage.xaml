@@ -102,10 +102,14 @@
             <!--Column 1-->
             <Frame Grid.Row="0" Grid.Column="0"
                    Style="{StaticResource FramesStyle}">
-                <StackLayout>
+                <StackLayout Orientation="Horizontal">
 
-                    <Image Source="thermometer.png"/>
-                    <Label/>
+                    <Image Source="thermometer.png" HeightRequest="70" WidthRequest="70"
+                           VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+
+                    <Label x:Name="tempLabel" Text="10*C"
+                           HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                           TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="Large"/>
 
                 </StackLayout>
 
