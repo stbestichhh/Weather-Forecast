@@ -64,6 +64,26 @@
 
         </Style>
 
+        <Style x:Key="imageStyle" TargetType="Image">
+
+            <Setter Property="HeightRequest" Value="50"/>
+            <Setter Property="WidthRequest" Value="50"/>
+            <Setter Property="HorizontalOptions" Value="Start"/>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+
+        </Style>
+
+        <Style x:Key="labelStyle" TargetType="Label">
+
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="FontFamily" Value="NewFont"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+
+        </Style>
+
     </ContentPage.Resources>
 
 
@@ -104,12 +124,11 @@
                    Style="{StaticResource FramesStyle}">
                 <StackLayout Orientation="Horizontal">
 
-                    <Image Source="thermometer.png" HeightRequest="50" WidthRequest="50"
-                           VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+                    <Image Source="thermometer.png"
+                           Style="{StaticResource imageStyle}"/>
 
                     <Label x:Name="tempLabel" Text="10*C" Margin="5,0,0,0"
-                           HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
-                           TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="Large"/>
+                           Style="{StaticResource labelStyle}"/>
 
                 </StackLayout>
 
@@ -142,12 +161,11 @@
                    Style="{StaticResource FramesStyle}">
                 <StackLayout Orientation="Horizontal">
 
-                    <Image Source="preassure.png" HeightRequest="50" WidthRequest="50"
-                           VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+                    <Image Source="preassure.png"
+                           Style="{StaticResource imageStyle}"/>
 
                     <Label x:Name="preassureLabel" Text="10*C" Margin="10,0,0,0"
-                           HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
-                           TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="Large"/>
+                           Style="{StaticResource labelStyle}"/>
 
                 </StackLayout>
 
@@ -158,12 +176,11 @@
                    Style="{StaticResource FramesStyle}">
                 <StackLayout Orientation="Horizontal">
 
-                    <Image Source="humidity.png" HeightRequest="50" WidthRequest="50"
-                           VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+                    <Image Source="humidity.png"
+                           Style="{StaticResource imageStyle}"/>
 
                     <Label x:Name="humidityLabel" Text="10*C" Margin="10,0,0,0"
-                           HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
-                           TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="Large"/>
+                           Style="{StaticResource labelStyle}"/>
 
                 </StackLayout>
 
@@ -173,12 +190,11 @@
                    Style="{StaticResource FramesStyle}">
                 <StackLayout Orientation="Horizontal">
 
-                    <Image Source="windspeed.png" HeightRequest="50" WidthRequest="50"
-                           VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+                    <Image Source="windspeed.png"
+                           Style="{StaticResource imageStyle}"/>
 
                     <Label x:Name="windSpeedLabel" Text="10*C" Margin="10,0,0,0"
-                           HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
-                           TextColor="White" FontAttributes="Bold" FontFamily="NewFont" FontSize="Large"/>
+                           Style="{StaticResource labelStyle}"/>
 
                 </StackLayout>
 
