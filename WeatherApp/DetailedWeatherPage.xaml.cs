@@ -18,17 +18,39 @@ public partial class DetailedWeatherPage : ContentPage
 
     //Weather Data Code
 
+    public bool weatherDataGettingOption = WeatherPage.howtoGetDataWeather;
     public string cityName = WeatherPage.cityName;
+    public double latitude;
+    public double longitude;
 
     protected async override void OnAppearing()
     {
         base.OnAppearing();
-        await GetWeatherByCityButton(cityName);
+        if(weatherDataGettingOption == false)
+            await GetWeatherByCityButton(cityName);
+        else
+        {
+            await GetUsersLocation();
+            await GetWeatherByLocationButton(latitude, longitude);
+        }
+    }
+
+    public async Task GetUsersLocation()
+    {
+        var userLocation = await Geolocation.GetLocationAsync();
+        latitude = userLocation.Latitude;
+        longitude = userLocation.Longitude;
     }
 
     public async Task GetWeatherByCityButton(string city)
     {
         var getWeather = await ApiService.GetWeatherByCity(city);
+        UpdateUI(getWeather);
+    }
+
+    public async Task GetWeatherByLocationButton(double latitute, double longitude)
+    {
+        var getWeather = await ApiService.GetWeather(latitute, longitude);
         UpdateUI(getWeather);
     }
 
