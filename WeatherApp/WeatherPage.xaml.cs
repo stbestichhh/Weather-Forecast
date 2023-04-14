@@ -4,8 +4,8 @@ namespace WeatherApp;
 
 public partial class WeatherPage : ContentPage
 {
-    public double latitude;
-    public double longitude;
+    public static double latitude;
+    public static double longitude;
     public static string cityName;
     public static bool howtoGetDataWeather;
 
