@@ -7,6 +7,7 @@ public partial class WeatherPage : ContentPage
     public double latitude;
     public double longitude;
     public static string cityName;
+    public static bool howtoGetDataWeather;
 
     public WeatherPage()
     {
@@ -25,6 +26,7 @@ public partial class WeatherPage : ContentPage
         var userLocation = await Geolocation.GetLocationAsync();
         latitude = userLocation.Latitude;
         longitude = userLocation.Longitude;
+        howtoGetDataWeather = true;
     }
 
     private async void OnLocationButtonClicked(object sender, EventArgs e)
@@ -57,12 +59,14 @@ public partial class WeatherPage : ContentPage
     {
         var getWeather = await ApiService.GetWeather(latitute, longitude);     
         UpdateUI(getWeather);
+        howtoGetDataWeather = true;
     }
 
     public async Task GetWeatherByCityButton(string city)
     {
         var getWeather = await ApiService.GetWeatherByCity(city);
         UpdateUI(getWeather);
+        howtoGetDataWeather = false;
     }
 
     public void UpdateUI(dynamic getWeather)
