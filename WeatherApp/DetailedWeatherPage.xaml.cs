@@ -20,8 +20,8 @@ public partial class DetailedWeatherPage : ContentPage
 
     public bool weatherDataGettingOption = WeatherPage.howtoGetDataWeather;
     public string cityName = WeatherPage.cityName;
-    public double latitude;
-    public double longitude;
+    public double latitude = WeatherPage.latitude;
+    public double longitude = WeatherPage.longitude;
 
     protected async override void OnAppearing()
     {
@@ -30,16 +30,8 @@ public partial class DetailedWeatherPage : ContentPage
             await GetWeatherByCityButton(cityName);
         else
         {
-            await GetUsersLocation();
             await GetWeatherByLocationButton(latitude, longitude);
         }
-    }
-
-    public async Task GetUsersLocation()
-    {
-        var userLocation = await Geolocation.GetLocationAsync();
-        latitude = userLocation.Latitude;
-        longitude = userLocation.Longitude;
     }
 
     public async Task GetWeatherByCityButton(string city)
