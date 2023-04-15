@@ -13,7 +13,7 @@ public partial class WeatherPage : ContentPage
     public WeatherPage()
     {
         InitializeComponent();
-    }
+    }    
 
     protected async override void OnAppearing()
     {
