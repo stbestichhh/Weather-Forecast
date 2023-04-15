@@ -8,17 +8,25 @@ public partial class WeatherPage : ContentPage
     public static double longitude;
     public static string cityName;
     public static bool howtoGetDataWeather;
+    public static bool isAlreadyLaunched = false;
 
     public WeatherPage()
     {
         InitializeComponent();
-    }
+    }    
 
     protected async override void OnAppearing()
     {
         base.OnAppearing();
-        await GetUsersLocation();
-        await GetWeatherByLocationButton(latitude, longitude);
+        if(isAlreadyLaunched == false)        
+            await GetUsersLocation();
+
+        if (howtoGetDataWeather == false)
+            await GetWeatherByCityButton(cityName);
+        else
+        {
+            await GetWeatherByLocationButton(latitude, longitude);
+        }
     }
 
     public async Task GetUsersLocation()
@@ -27,6 +35,7 @@ public partial class WeatherPage : ContentPage
         latitude = userLocation.Latitude;
         longitude = userLocation.Longitude;
         howtoGetDataWeather = true;
+        isAlreadyLaunched = true;
     }
 
     private async void OnLocationButtonClicked(object sender, EventArgs e)
