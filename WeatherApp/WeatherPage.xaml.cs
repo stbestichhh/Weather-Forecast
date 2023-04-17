@@ -47,12 +47,10 @@ public partial class WeatherPage : ContentPage
         var searchResponse = await DisplayPromptAsync(title: "", message: "", placeholder: "Enter city name", accept: "Search", cancel: "Cancel");
         try
         {
-            if (searchResponse != null)
-            {
-                await GetWeatherBySearchedCity(searchResponse);
-            }
+            if (searchResponse != null)            
+                await GetWeatherBySearchedCity(searchResponse);            
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             await DisplayAlert(title: "City not found", message:"Make sure the city name is correct and try again.", cancel:"Ok");
         }
