@@ -21,12 +21,10 @@ public partial class WeatherPage : ContentPage
         if(isAlreadyLaunched == false)        
             await GetUsersLocation();
 
-        if (howtoGetDataWeather == false)
-            await GetWeatherByCityButton(cityName);
+        if (howtoGetDataWeather != false)        
+            await GetWeatherByLocationButton(latitude, longitude);        
         else
-        {
-            await GetWeatherByLocationButton(latitude, longitude);
-        }
+            await GetWeatherByCityButton(cityName);
     }
 
     public async Task GetUsersLocation()
