@@ -87,7 +87,7 @@ public partial class WeatherPage : ContentPage
     }
 
     //See detailed weather page
-    void TapRecognizer_Tapped(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
+    private void TapRecognizer_Tapped(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
         Navigation.PushModalAsync(new DetailedWeatherPage());
     }
