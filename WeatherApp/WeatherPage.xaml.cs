@@ -8,7 +8,7 @@ public partial class WeatherPage : ContentPage
     public static double longitude;
     public static string cityName;
     public static bool howtoGetDataWeather;
-    public static bool isAlreadyLaunched = false;
+    public static bool isAlreadyLaunched;
 
     public WeatherPage()
     {
@@ -21,12 +21,10 @@ public partial class WeatherPage : ContentPage
         if(isAlreadyLaunched == false)        
             await GetUsersLocation();
 
-        if (howtoGetDataWeather == false)
-            await GetWeatherByCityButton(cityName);
+        if (howtoGetDataWeather != false)        
+            await GetWeatherByLocation(latitude, longitude);        
         else
-        {
-            await GetWeatherByLocationButton(latitude, longitude);
-        }
+            await GetWeatherBySearchedCity(cityName);
     }
 
     public async Task GetUsersLocation()
@@ -41,7 +39,7 @@ public partial class WeatherPage : ContentPage
     private async void OnLocationButtonClicked(object sender, EventArgs e)
     {
         await GetUsersLocation();
-        await GetWeatherByLocationButton(latitude, longitude);
+        await GetWeatherByLocation(latitude, longitude);
     }
 
     private async void OnSearchButtonClicked(object sender, EventArgs e)
@@ -49,12 +47,10 @@ public partial class WeatherPage : ContentPage
         var searchResponse = await DisplayPromptAsync(title: "", message: "", placeholder: "Enter city name", accept: "Search", cancel: "Cancel");
         try
         {
-            if (searchResponse != null)
-            {
-                await GetWeatherByCityButton(searchResponse);
-            }
+            if (searchResponse != null)            
+                await GetWeatherBySearchedCity(searchResponse);            
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             await DisplayAlert(title: "City not found", message:"Make sure the city name is correct and try again.", cancel:"Ok");
         }
@@ -64,14 +60,14 @@ public partial class WeatherPage : ContentPage
         }
     }
 
-    public async Task GetWeatherByLocationButton(double latitute, double longitude)
+    public async Task GetWeatherByLocation(double latitute, double longitude)
     {
         var getWeather = await ApiService.GetWeather(latitute, longitude);     
         UpdateUI(getWeather);
         howtoGetDataWeather = true;
     }
 
-    public async Task GetWeatherByCityButton(string city)
+    public async Task GetWeatherBySearchedCity(string city)
     {
         var getWeather = await ApiService.GetWeatherByCity(city);
         UpdateUI(getWeather);
@@ -91,7 +87,7 @@ public partial class WeatherPage : ContentPage
     }
 
     //See detailed weather page
-    void TapRecognizer_Tapped(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
+    private void OnFrameTapped(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
         Navigation.PushModalAsync(new DetailedWeatherPage());
     }

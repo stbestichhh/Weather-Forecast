@@ -97,7 +97,7 @@
 
             <Button x:Name="goBackButton" Text="Return"
                     HorizontalOptions="StartAndExpand"
-                    Clicked="goBackButton_Clicked"
+                    Clicked="OnGoBackButtonClicked"
                     Style="{StaticResource TopButtonsStyle}"/>
 
         </HorizontalStackLayout>
