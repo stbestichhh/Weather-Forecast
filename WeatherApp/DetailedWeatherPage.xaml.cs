@@ -1,5 +1,4 @@
-﻿using System.Windows.Input;
-using WeatherApp.Services;
+﻿using WeatherApp.Services;
 
 namespace WeatherApp;
 
