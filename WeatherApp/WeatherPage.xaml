@@ -205,7 +205,7 @@
                             </StackLayout>
 
                             <Frame.GestureRecognizers>
-                                <TapGestureRecognizer x:Name="TapRecognizer" Tapped="TapRecognizer_Tapped"/>
+                                <TapGestureRecognizer x:Name="TapRecognizer" Tapped="OnFrameTapped"/>
                             </Frame.GestureRecognizers>
 
                         </Frame>

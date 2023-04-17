@@ -1,5 +1,4 @@
-﻿using System.Windows.Input;
-using WeatherApp.Services;
+﻿using WeatherApp.Services;
 
 namespace WeatherApp;
 
@@ -10,7 +9,7 @@ public partial class DetailedWeatherPage : ContentPage
         InitializeComponent();
     }
 
-    void goBackButton_Clicked(System.Object sender, System.EventArgs e)
+    private void OnGoBackButtonClicked(System.Object sender, System.EventArgs e)
     {
         Navigation.PushModalAsync(new WeatherPage());
     }
@@ -26,12 +25,10 @@ public partial class DetailedWeatherPage : ContentPage
     protected async override void OnAppearing()
     {
         base.OnAppearing();
-        if(weatherDataGettingOption == false)
-            await GetWeatherByCityButton(cityName);
+        if (weatherDataGettingOption != false)        
+            await GetWeatherByLocationButton(latitude, longitude);        
         else
-        {
-            await GetWeatherByLocationButton(latitude, longitude);
-        }
+            await GetWeatherByCityButton(cityName);
     }
 
     public async Task GetWeatherByCityButton(string city)
