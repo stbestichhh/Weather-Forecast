@@ -8,7 +8,7 @@ public partial class WeatherPage : ContentPage
     public static double longitude;
     public static string cityName;
     public static bool howtoGetDataWeather;
-    public static bool isAlreadyLaunched = false;
+    public static bool isAlreadyLaunched;
 
     public WeatherPage()
     {
