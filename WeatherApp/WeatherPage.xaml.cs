@@ -22,9 +22,9 @@ public partial class WeatherPage : ContentPage
             await GetUsersLocation();
 
         if (howtoGetDataWeather != false)        
-            await GetWeatherByLocationButton(latitude, longitude);        
+            await GetWeatherByLocation(latitude, longitude);        
         else
-            await GetWeatherByCityButton(cityName);
+            await GetWeatherBySearchedCity(cityName);
     }
 
     public async Task GetUsersLocation()
@@ -39,7 +39,7 @@ public partial class WeatherPage : ContentPage
     private async void OnLocationButtonClicked(object sender, EventArgs e)
     {
         await GetUsersLocation();
-        await GetWeatherByLocationButton(latitude, longitude);
+        await GetWeatherByLocation(latitude, longitude);
     }
 
     private async void OnSearchButtonClicked(object sender, EventArgs e)
@@ -49,7 +49,7 @@ public partial class WeatherPage : ContentPage
         {
             if (searchResponse != null)
             {
-                await GetWeatherByCityButton(searchResponse);
+                await GetWeatherBySearchedCity(searchResponse);
             }
         }
         catch (Exception ex)
@@ -62,14 +62,14 @@ public partial class WeatherPage : ContentPage
         }
     }
 
-    public async Task GetWeatherByLocationButton(double latitute, double longitude)
+    public async Task GetWeatherByLocation(double latitute, double longitude)
     {
         var getWeather = await ApiService.GetWeather(latitute, longitude);     
         UpdateUI(getWeather);
         howtoGetDataWeather = true;
     }
 
-    public async Task GetWeatherByCityButton(string city)
+    public async Task GetWeatherBySearchedCity(string city)
     {
         var getWeather = await ApiService.GetWeatherByCity(city);
         UpdateUI(getWeather);
