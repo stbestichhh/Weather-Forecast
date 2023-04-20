@@ -6,7 +6,7 @@ This is a [.NET 7 MAUI ](https://dotnet.microsoft.com/en-us/apps/maui)app which 
 
 ![](Aspose.Words.3fbc60f6-72ed-4366-afce-4284cb490b42.001.jpeg)
 
-How to install you can find her[e.](https://github.com/dotnet/maui/wiki#getting-started)
+How to install you can find [here.](https://github.com/dotnet/maui/wiki#getting-started)
 
 **How to use** 
 
