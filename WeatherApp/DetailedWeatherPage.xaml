@@ -236,7 +236,7 @@
 
         <VerticalStackLayout Grid.Row="3"
                              VerticalOptions="EndAndExpand"
-                             HeightRequest="20" Margin="0">
+                             HeightRequest="30" Margin="0">
 
             <HorizontalStackLayout HorizontalOptions="Center">
 
