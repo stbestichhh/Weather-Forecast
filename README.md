@@ -21,4 +21,5 @@ Only first time launching this app you will see a welcome page. Then you meets t
 There are two buttons. «Where am I?» button automatically takes your current geolocation, then shows weather in your location. «Search» button allow you to find other place and see the weather there.
 
 ![](collectionView.png)
+
 Here is a forecast for next 5 days in every 3 hours. By tapping it you will be navigated to the page with additional information of the current weather: min and max temperature, sunrise and sunset time, atmosphere pressure, longitude and latitude in the current location.
