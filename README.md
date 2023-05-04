@@ -1,6 +1,6 @@
 **Weather App** 
 
-based on [openweathermap/api](https://openweathermap.org)
+based on [openweathermap/api](https://openweathermap.org/api)
 
 This is a [.NET 7 MAUI ](https://dotnet.microsoft.com/en-us/apps/maui)app which shows current weather and forecast for the next 5 days every 3 hours.
 
