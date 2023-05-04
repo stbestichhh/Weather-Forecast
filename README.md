@@ -22,6 +22,7 @@ There are two buttons. «Where am I?» button automatically takes your current g
 
 Here is a forecast for next 5 days in every 3 hours. 
 
+
 ![](collectionView.png)
 
 By tapping it you will be navigated to the page with additional information of the current weather: min and max temperature, sunrise and sunset time, atmosphere pressure, longitude and latitude in the current location.
