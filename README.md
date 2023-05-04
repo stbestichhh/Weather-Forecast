@@ -11,6 +11,7 @@ How to install you can find [here.](https://github.com/dotnet/maui/wiki#getting-
 **How to use** 
 
 This app requires internet connection 
+
 ![](internetException.png)
 
 Only first time launching this app you will see a welcome page. Then you meets the main page with general weather data. 
