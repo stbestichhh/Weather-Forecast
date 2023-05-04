@@ -43,7 +43,7 @@ public partial class WeatherPage : ContentPage
     }
 
     private async void OnSearchButtonClicked(object sender, EventArgs e)
-    {
+    {        
         var searchResponse = await DisplayPromptAsync(title: "", message: "", placeholder: "Enter city name", accept: "Search", cancel: "Cancel");
         try
         {
@@ -62,6 +62,7 @@ public partial class WeatherPage : ContentPage
 
     public async Task GetWeatherByLocation(double latitute, double longitude)
     {
+        await ChekInterntetConnectivity(); //Check connection
         var getWeather = await ApiService.GetWeather(latitute, longitude);     
         UpdateUI(getWeather);
         howtoGetDataWeather = true;
@@ -69,6 +70,7 @@ public partial class WeatherPage : ContentPage
 
     public async Task GetWeatherBySearchedCity(string city)
     {
+        await ChekInterntetConnectivity(); //Check connection
         var getWeather = await ApiService.GetWeatherByCity(city);
         UpdateUI(getWeather);
         howtoGetDataWeather = false;
@@ -90,5 +92,18 @@ public partial class WeatherPage : ContentPage
     private void OnFrameTapped(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
         Navigation.PushModalAsync(new DetailedWeatherPage());
+    }
+
+
+    //Check internet connection
+    public async Task ChekInterntetConnectivity()
+    {
+        if(Connectivity.Current.NetworkAccess == NetworkAccess.None)
+        {
+            await DisplayAlert(title: "Internet connection not found!",
+                                message: "Make sure you connected to the internet and restart an app",
+                                cancel: "Ok");
+            System.Environment.Exit(0);
+        }
     }
 }
