@@ -1,4 +1,4 @@
-**Weather App** 
+# Weather App
 
 based on [openweathermap/api](https://openweathermap.org/api)
 
@@ -9,9 +9,9 @@ This is a [.NET 7 MAUI ](https://dotnet.microsoft.com/en-us/apps/maui)app which 
 How to install you can find [here.](https://github.com/dotnet/maui/wiki#getting-started)
 
 
-**How to use**
+# How to use
 
-This app requires internet connection 
+**This app requires internet connection**
 
 ![](internetException.png)
 
