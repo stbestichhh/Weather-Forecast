@@ -17,10 +17,10 @@ public partial class DetailedWeatherPage : ContentPage
 
     //Weather Data Code
 
-    public bool weatherDataGettingOption = WeatherPage.howtoGetDataWeather;
-    public string cityName = WeatherPage.cityName;
-    public double latitude = WeatherPage.latitude;
-    public double longitude = WeatherPage.longitude;
+    private bool weatherDataGettingOption = WeatherPage.howtoGetDataWeather;
+    private string cityName = WeatherPage.cityName;
+    private double latitude = WeatherPage.latitude;
+    private double longitude = WeatherPage.longitude;
 
     protected async override void OnAppearing()
     {
