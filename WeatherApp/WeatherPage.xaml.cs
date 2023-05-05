@@ -18,13 +18,16 @@ public partial class WeatherPage : ContentPage
     protected async override void OnAppearing()
     {
         base.OnAppearing();
-        if(isAlreadyLaunched == false)        
+        if(isAlreadyLaunched == false) {
             await GetUsersLocation();
+        }            
 
-        if (howtoGetDataWeather != false)        
-            await GetWeatherByLocation(latitude, longitude);        
-        else
+        if (howtoGetDataWeather != false) {
+            await GetWeatherByLocation(latitude, longitude);
+        }            
+        else {
             await GetWeatherBySearchedCity(cityName);
+        }            
     }
 
     public async Task GetUsersLocation()
