@@ -3,24 +3,16 @@
 namespace WeatherApp;
 
 public partial class DetailedWeatherPage : ContentPage
-{
-    public DetailedWeatherPage()
-    {
-        InitializeComponent();
-    }
-
-    private void OnGoBackButtonClicked(System.Object sender, System.EventArgs e)
-    {
-        Navigation.PushModalAsync(new WeatherPage());
-    }
-
-
-    //Weather Data Code
-
+{    
     private bool weatherDataGettingOption = WeatherPage.howtoGetDataWeather;
     private string cityName = WeatherPage.cityName;
     private double latitude = WeatherPage.latitude;
     private double longitude = WeatherPage.longitude;
+
+    public DetailedWeatherPage()
+    {
+        InitializeComponent();
+    }
 
     protected async override void OnAppearing()
     {
@@ -31,6 +23,11 @@ public partial class DetailedWeatherPage : ContentPage
         else {
             await GetWeatherByCityButton(cityName);
         }            
+    }
+
+    private void OnGoBackButtonClicked(System.Object sender, System.EventArgs e)
+    {
+        Navigation.PushModalAsync(new WeatherPage());
     }
 
     public async Task GetWeatherByCityButton(string city)
