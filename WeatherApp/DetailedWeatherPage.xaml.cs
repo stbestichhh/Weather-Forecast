@@ -46,20 +46,19 @@ public partial class DetailedWeatherPage : ContentPage
     {
         todaysDate.Text = DateTime.Now.Date.ToShortDateString();
 
+        //column 1
         tempLabel.Text = getWeather.list[0].main.convertedTemp + "°C";
-
         minTempLabel.Text = getWeather.list[0].main.convertedMinTemp + "°C";
         maxTempLabel.Text = getWeather.list[0].main.convertedMaxTemp + "°C";
-
         preassureLabel.Text = getWeather.list[0].main.pressure + "hPa";
 
+        //column 2
         humidityLabel.Text = getWeather.list[0].main.humidity + " %";
-
         windSpeedLabel.Text = getWeather.list[0].wind.speedInMeters + " m/s";
-
         sunriseLabel.Text = getWeather.city.sunriseTime;
         sunsetLabel.Text = getWeather.city.sunsetTime;
 
+        //additional information
         cityLabel.Text = getWeather.city.name + ", ";
         countryLabel.Text = getWeather.city.country + "; ";
         latLabel.Text = getWeather.city.coord.lat + ", ";
