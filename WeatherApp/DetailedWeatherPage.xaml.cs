@@ -25,10 +25,12 @@ public partial class DetailedWeatherPage : ContentPage
     protected async override void OnAppearing()
     {
         base.OnAppearing();
-        if (weatherDataGettingOption != false)        
-            await GetWeatherByLocationButton(latitude, longitude);        
-        else
+        if (weatherDataGettingOption != false) {
+            await GetWeatherByLocationButton(latitude, longitude);
+        }                   
+        else {
             await GetWeatherByCityButton(cityName);
+        }            
     }
 
     public async Task GetWeatherByCityButton(string city)
