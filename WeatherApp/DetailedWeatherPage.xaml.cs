@@ -25,7 +25,7 @@ public partial class DetailedWeatherPage : ContentPage
         }            
     }
 
-    private void OnGoBackButtonClicked(System.Object sender, System.EventArgs e)
+    private void OnGoBackButtonClicked(Object sender, EventArgs e)
     {
         Navigation.PushModalAsync(new WeatherPage());
     }
