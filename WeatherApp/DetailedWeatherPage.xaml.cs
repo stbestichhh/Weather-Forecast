@@ -3,32 +3,31 @@
 namespace WeatherApp;
 
 public partial class DetailedWeatherPage : ContentPage
-{
+{    
+    private bool weatherDataGettingOption = WeatherPage.howtoGetDataWeather;
+    private string cityName = WeatherPage.cityName;
+    private double latitude = WeatherPage.latitude;
+    private double longitude = WeatherPage.longitude;
+
     public DetailedWeatherPage()
     {
         InitializeComponent();
     }
 
-    private void OnGoBackButtonClicked(System.Object sender, System.EventArgs e)
-    {
-        Navigation.PushModalAsync(new WeatherPage());
-    }
-
-
-    //Weather Data Code
-
-    public bool weatherDataGettingOption = WeatherPage.howtoGetDataWeather;
-    public string cityName = WeatherPage.cityName;
-    public double latitude = WeatherPage.latitude;
-    public double longitude = WeatherPage.longitude;
-
     protected async override void OnAppearing()
     {
         base.OnAppearing();
-        if (weatherDataGettingOption != false)        
-            await GetWeatherByLocationButton(latitude, longitude);        
-        else
+        if (weatherDataGettingOption != false) {
+            await GetWeatherByLocationButton(latitude, longitude);
+        }                   
+        else {
             await GetWeatherByCityButton(cityName);
+        }            
+    }
+
+    private void OnGoBackButtonClicked(Object sender, EventArgs e)
+    {
+        Navigation.PushModalAsync(new WeatherPage());
     }
 
     public async Task GetWeatherByCityButton(string city)
@@ -47,20 +46,19 @@ public partial class DetailedWeatherPage : ContentPage
     {
         todaysDate.Text = DateTime.Now.Date.ToShortDateString();
 
+        //column 1
         tempLabel.Text = getWeather.list[0].main.convertedTemp + "°C";
-
         minTempLabel.Text = getWeather.list[0].main.convertedMinTemp + "°C";
         maxTempLabel.Text = getWeather.list[0].main.convertedMaxTemp + "°C";
-
         preassureLabel.Text = getWeather.list[0].main.pressure + "hPa";
 
+        //column 2
         humidityLabel.Text = getWeather.list[0].main.humidity + " %";
-
         windSpeedLabel.Text = getWeather.list[0].wind.speedInMeters + " m/s";
-
         sunriseLabel.Text = getWeather.city.sunriseTime;
         sunsetLabel.Text = getWeather.city.sunsetTime;
 
+        //additional information
         cityLabel.Text = getWeather.city.name + ", ";
         countryLabel.Text = getWeather.city.country + "; ";
         latLabel.Text = getWeather.city.coord.lat + ", ";
