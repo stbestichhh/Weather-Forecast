@@ -13,7 +13,7 @@ namespace WeatherApp.Data
             var instance = new SearchHistoryDatabase();
             try
             {
-                CreateTableResult result = await Database.CreateTableAsync<SearchHistoryDatabase>();
+                CreateTableResult result = await Database.CreateTableAsync<DatabaseTable>();
             }
             catch (Exception e)
             {
@@ -21,6 +21,26 @@ namespace WeatherApp.Data
             }
             return instance;
         });
+
+        public SearchHistoryDatabase()
+        {
+            Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.flags);
+        }
+
+        public Task<List<DatabaseTable>> GetItemsAsync()
+        {
+            return Database.Table<DatabaseTable>().ToListAsync();
+        }
+
+        public Task<int> SaveItemAsync(DatabaseTable cityName)
+        {
+            return cityName.ID != 0 ? Database.UpdateAsync(cityName) : Database.InsertAsync(cityName);
+        }
+
+        public Task<int> DeleteItemAsync(DatabaseTable cityName)
+        {
+            return Database.DeleteAsync(cityName);
+        }
     }
 }
 
