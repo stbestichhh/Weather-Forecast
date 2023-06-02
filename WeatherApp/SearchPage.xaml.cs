@@ -1,4 +1,6 @@
-﻿namespace WeatherApp;
+﻿using WeatherApp.Services;
+
+namespace WeatherApp;
 
 public partial class SearchPage : ContentPage
 {
@@ -7,8 +9,8 @@ public partial class SearchPage : ContentPage
         InitializeComponent();
     }
 
-    void returnButton_Clicked(System.Object sender, System.EventArgs e)
+    private async void returnButton_Clicked(System.Object sender, System.EventArgs e)
     {
         Navigation.PushModalAsync(new WeatherPage());
-    }
+    }   
 }
