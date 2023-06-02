@@ -94,10 +94,12 @@
 	  <None Remove="Resources\Images\sunset.png" />
 	  <None Remove="Resources\Images\thermometer.png" />
 	  <None Remove="Resources\Images\windsSpeed.png" />
+	  <None Remove="Data\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Models\" />
 	  <Folder Include="Services\" />
+	  <Folder Include="Data\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\hydrometer.png" />
