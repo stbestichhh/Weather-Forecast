@@ -9,6 +9,7 @@ public partial class WeatherPage : ContentPage
     public static string cityName;
     public static bool howtoGetDataWeather;
     private static bool isAlreadyLaunched;
+    private static string searchResponse = SearchPage.cityNameSearched;
 
     public WeatherPage()
     {
@@ -49,21 +50,20 @@ public partial class WeatherPage : ContentPage
 
     private async void OnSearchButtonClicked(object sender, EventArgs e)
     {
-        //var searchResponse = await DisplayPromptAsync(title: "", message: "", placeholder: "Enter city name", accept: "Search", cancel: "Cancel");
-        //try
-        //{
-        //    if (searchResponse != null)            
-        //        await GetWeatherBySearchedCity(searchResponse);            
-        //}
-        //catch (Exception)
-        //{
-        //    await DisplayAlert(title: "City not found", message:"Make sure the city name is correct and try again.", cancel:"Ok");
-        //}
-        //finally
-        //{
-        //    cityName = searchResponse;
-        //},
-        Navigation.PushModalAsync(new SearchPage());
+        try
+        {
+            if (searchResponse != null)
+                await GetWeatherBySearchedCity(searchResponse);
+        }
+        catch (Exception)
+        {
+            await DisplayAlert(title: "City not found", message: "Make sure the city name is correct and try again.", cancel: "Ok");
+        }
+        finally
+        {
+            cityName = searchResponse;
+        }
+        await Navigation.PushModalAsync(new SearchPage());
     }
 
     public async Task GetWeatherByLocation(double latitute, double longitude)
