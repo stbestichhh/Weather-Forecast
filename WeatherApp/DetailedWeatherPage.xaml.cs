@@ -17,12 +17,14 @@ public partial class DetailedWeatherPage : ContentPage
     protected async override void OnAppearing()
     {
         base.OnAppearing();
-        if (weatherDataGettingOption != false) {
-            await GetWeatherByLocationButton(latitude, longitude);
-        }                   
-        else {
+        if (weatherDataGettingOption == false)
+        {
             await GetWeatherByCityButton(cityName);
-        }            
+        }
+        else
+        {
+            await GetWeatherByLocationButton(latitude, longitude);
+        }
     }
 
     private void OnGoBackButtonClicked(Object sender, EventArgs e)

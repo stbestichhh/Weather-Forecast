@@ -20,14 +20,16 @@ public partial class WeatherPage : ContentPage
         base.OnAppearing();
         if(isAlreadyLaunched == false) {
             await GetUsersLocation();
-        }            
+        }
 
-        if (howtoGetDataWeather != false) {
-            await GetWeatherByLocation(latitude, longitude);
-        }            
-        else {
+        if (howtoGetDataWeather == false)
+        {
             await GetWeatherBySearchedCity(cityName);
-        }            
+        }
+        else
+        {
+            await GetWeatherByLocation(latitude, longitude);
+        }
     }
 
     public async Task GetUsersLocation()
@@ -46,21 +48,22 @@ public partial class WeatherPage : ContentPage
     }
 
     private async void OnSearchButtonClicked(object sender, EventArgs e)
-    {        
-        var searchResponse = await DisplayPromptAsync(title: "", message: "", placeholder: "Enter city name", accept: "Search", cancel: "Cancel");
-        try
-        {
-            if (searchResponse != null)            
-                await GetWeatherBySearchedCity(searchResponse);            
-        }
-        catch (Exception)
-        {
-            await DisplayAlert(title: "City not found", message:"Make sure the city name is correct and try again.", cancel:"Ok");
-        }
-        finally
-        {
-            cityName = searchResponse;
-        }
+    {
+        //var searchResponse = await DisplayPromptAsync(title: "", message: "", placeholder: "Enter city name", accept: "Search", cancel: "Cancel");
+        //try
+        //{
+        //    if (searchResponse != null)            
+        //        await GetWeatherBySearchedCity(searchResponse);            
+        //}
+        //catch (Exception)
+        //{
+        //    await DisplayAlert(title: "City not found", message:"Make sure the city name is correct and try again.", cancel:"Ok");
+        //}
+        //finally
+        //{
+        //    cityName = searchResponse;
+        //}
+        Navigation.PushModalAsync(new SearchPage());
     }
 
     public async Task GetWeatherByLocation(double latitute, double longitude)
