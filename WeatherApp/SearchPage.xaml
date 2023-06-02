@@ -16,4 +16,27 @@
 
     </ContentPage.Background>
 
+    <!--Resources-->
+    <ContentPage.Resources>
+
+        <Style x:Key="TopButtonsStyle" TargetType="Button">
+
+            <Setter Property="FontSize" Value="Default"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontFamily" Value=""/>
+            <Setter Property="TextColor" Value="DeepSkyBlue"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+
+        </Style>
+
+    </ContentPage.Resources>
+
+    <StackLayout Orientation="Vertical" Margin="20">
+        <Button x:Name="returnButton" Text="Return"
+                Style="{StaticResource TopButtonsStyle}"
+                Clicked="returnButton_Clicked"/>
+
+    </StackLayout>
+
 </ContentPage>

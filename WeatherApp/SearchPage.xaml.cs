@@ -6,4 +6,9 @@ public partial class SearchPage : ContentPage
     {
         InitializeComponent();
     }
+
+    void returnButton_Clicked(System.Object sender, System.EventArgs e)
+    {
+        Navigation.PushModalAsync(new WeatherPage());
+    }
 }
