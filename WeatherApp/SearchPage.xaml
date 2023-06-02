@@ -3,10 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherApp.SearchPage"
              Title="SearchPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <!--Page Background-->
+    <ContentPage.Background>
+
+        <LinearGradientBrush EndPoint="1,2">
+                <GradientStop Color="#8C82D5"
+                          Offset="0.1" />
+                <GradientStop Color="#7929EF"
+                          Offset="1.9" />
+        </LinearGradientBrush>
+
+    </ContentPage.Background>
+
 </ContentPage>

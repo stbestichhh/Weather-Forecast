@@ -62,7 +62,7 @@ public partial class WeatherPage : ContentPage
         //finally
         //{
         //    cityName = searchResponse;
-        //}
+        //},
         Navigation.PushModalAsync(new SearchPage());
     }
 
