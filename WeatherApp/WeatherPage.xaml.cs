@@ -25,7 +25,7 @@ public partial class WeatherPage : ContentPage
 
         if (howtoGetDataWeather == false)
         {
-            await GetWeatherBySearchedCity(cityName);
+            await GetWeatherBySearchedCity(searchResponse);
         }
         else
         {

@@ -26,7 +26,6 @@
             <Setter Property="FontFamily" Value=""/>
             <Setter Property="TextColor" Value="DeepSkyBlue"/>
             <Setter Property="BackgroundColor" Value="Transparent"/>
-            <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
 
         </Style>
 
@@ -60,11 +59,13 @@
 
         <Button x:Name="returnButton" Text="Return"
                 Style="{StaticResource TopButtonsStyle}"
+                HorizontalOptions="StartAndExpand"
                 Clicked="returnButton_Clicked"/>
 
         <Editor x:Name="searchBar" Style="{StaticResource searchBarStyle}"/>
 
-        <CollectionView x:Name="searchStory" Margin="0,10,0,0">
+        <CollectionView x:Name="searchStory" Margin="0,10,0,0" SelectionMode="Single"
+                        SelectionChanged="searchStory_SelectionChanged">
 
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical"
@@ -79,8 +80,17 @@
                     <Frame BackgroundColor="#8C82D5"
                            BorderColor="Transparent"
                            CornerRadius="25">
-                        <Label x:Name="storyCityLabel" Text="{Binding Name}"
-                               Style="{StaticResource cityNameLabel}"/>
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Label x:Name="storyCityLabel" Text="{Binding Name}"
+                               Style="{StaticResource cityNameLabel}" HorizontalOptions="Start"/>
+
+                            <Button x:Name="deleteButton" Text="Delete"
+                                    Style="{StaticResource TopButtonsStyle}" HorizontalOptions="End"
+                                    Clicked="deleteButton_Clicked"/>
+
+                        </StackLayout>
 
                     </Frame>
 
