@@ -11,12 +11,13 @@ public partial class DetailedWeatherPage : ContentPage
 
     public DetailedWeatherPage()
     {
-        InitializeComponent();
+        InitializeComponent();        
     }
 
     protected async override void OnAppearing()
     {
         base.OnAppearing();
+        await ChekInterntetConnectivity();
         if (weatherDataGettingOption != false) {
             await GetWeatherByLocationButton(latitude, longitude);
         }                   
@@ -63,5 +64,16 @@ public partial class DetailedWeatherPage : ContentPage
         countryLabel.Text = getWeather.city.country + "; ";
         latLabel.Text = getWeather.city.coord.lat + ", ";
         lonLabel.Text = getWeather.city.coord.lon + ";";
+    }
+
+    public async Task ChekInterntetConnectivity()
+    {
+        if (Connectivity.Current.NetworkAccess == NetworkAccess.None)
+        {
+            await DisplayAlert(title: "Internet connection not found!",
+                                message: "Make sure you connected to the internet and restart an app",
+                                cancel: "Ok");
+            System.Environment.Exit(0);
+        }
     }
 }
