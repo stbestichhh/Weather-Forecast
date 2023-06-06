@@ -93,10 +93,9 @@ public partial class WeatherPage : ContentPage
 
     
     private void OnFrameTapped(Object sender, TappedEventArgs e)
-    {
+    {        
         Navigation.PushModalAsync(new DetailedWeatherPage());
     }
-
 
 
     public async Task ChekInterntetConnectivity()
