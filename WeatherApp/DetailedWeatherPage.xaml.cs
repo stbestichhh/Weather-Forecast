@@ -45,7 +45,7 @@ public partial class DetailedWeatherPage : ContentPage
 
     public void UpdateUI(dynamic getWeather)
     {
-        todaysDate.Text = DateTime.Now.Date.ToShortDateString();
+        detailedWeatherDataView.ItemsSource = getWeather.list;
 
         //column 1
         tempLabel.Text = getWeather.list[0].main.convertedTemp + "°C";
@@ -57,13 +57,7 @@ public partial class DetailedWeatherPage : ContentPage
         humidityLabel.Text = getWeather.list[0].main.humidity + " %";
         windSpeedLabel.Text = getWeather.list[0].wind.speedInMeters + " m/s";
         sunriseLabel.Text = getWeather.city.sunriseTime;
-        sunsetLabel.Text = getWeather.city.sunsetTime;
-
-        //additional information
-        cityLabel.Text = getWeather.city.name + ", ";
-        countryLabel.Text = getWeather.city.country + "; ";
-        latLabel.Text = getWeather.city.coord.lat + ", ";
-        lonLabel.Text = getWeather.city.coord.lon + ";";
+        sunsetLabel.Text = getWeather.city.sunsetTime; 
     }
 
     public async Task ChekInterntetConnectivity()

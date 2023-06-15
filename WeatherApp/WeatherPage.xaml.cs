@@ -80,23 +80,13 @@ public partial class WeatherPage : ContentPage
     }
 
     public void UpdateUI(dynamic getWeather)
-    {
-        detailedWeatherDataView.ItemsSource = getWeather.list;
-
+    {        
         cityLabel.Text = getWeather.city.name; 
         weatherConditionsLabel.Text = getWeather.list[0].weather[0].description; 
-        temperatureValueLabel.Text = getWeather.list[0].main.convertedTemp + "°C"; 
+        temperatureValueLabel.Text = getWeather.list[0].main.convertedTemp + "°"; 
         hydrometerValueLabel.Text = getWeather.list[0].main.humidity + " %"; 
         windSpeedLabel.Text = getWeather.list[0].wind.speedInMeters + " m/s";
-        weatherConditionsImage.Source = getWeather.list[0].weather[0].weatherImage; 
     }
-
-    
-    private void OnFrameTapped(Object sender, TappedEventArgs e)
-    {        
-        Navigation.PushModalAsync(new DetailedWeatherPage());
-    }
-
 
     public async Task ChekInterntetConnectivity()
     {
@@ -107,5 +97,10 @@ public partial class WeatherPage : ContentPage
                                 cancel: "Ok");
             System.Environment.Exit(0);
         }
+    }
+
+    async void TapRecognizer_Swiped(System.Object sender, Microsoft.Maui.Controls.SwipedEventArgs e)
+    {
+        await Navigation.PushModalAsync(new DetailedWeatherPage());
     }
 }
