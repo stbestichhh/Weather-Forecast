@@ -81,14 +81,13 @@ public partial class WeatherPage : ContentPage
 
     public void UpdateUI(dynamic getWeather)
     {
-        detailedWeatherDataView.ItemsSource = getWeather.list;
+        //detailedWeatherDataView.ItemsSource = getWeather.list;
 
         cityLabel.Text = getWeather.city.name; 
         weatherConditionsLabel.Text = getWeather.list[0].weather[0].description; 
-        temperatureValueLabel.Text = getWeather.list[0].main.convertedTemp + "°C"; 
+        temperatureValueLabel.Text = getWeather.list[0].main.convertedTemp + "°"; 
         hydrometerValueLabel.Text = getWeather.list[0].main.humidity + " %"; 
         windSpeedLabel.Text = getWeather.list[0].wind.speedInMeters + " m/s";
-        weatherConditionsImage.Source = getWeather.list[0].weather[0].weatherImage; 
     }
 
     
