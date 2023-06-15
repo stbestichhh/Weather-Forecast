@@ -2,31 +2,38 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherApp.DetailedWeatherPage"
-             Title="DetailedWeatherPage">
-
-    <!--Background-->
-    <ContentPage.Background>
-
-        <LinearGradientBrush EndPoint="1,2">
-                <GradientStop Color="#8C82D5"
-                          Offset="0.1" />
-                <GradientStop Color="#7929EF"
-                          Offset="1.9" />
-        </LinearGradientBrush>
-
-    </ContentPage.Background>
-
+             Title="DetailedWeatherPage"
+             BackgroundColor="CornflowerBlue">
 
 
     <!--Resources-->
     <ContentPage.Resources>
+
+        <!--CollectionVeiw Weather Data Resources-->
+        <Style x:Key="cvImage" TargetType="Image">
+
+            <Setter Property="HeightRequest" Value="50"/>
+            <Setter Property="WidthRequest" Value="50"/>
+            <Setter Property="VerticalOptions" Value="Start"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="Source" Value="{Binding weather[0].apiWeatherImage}"/>
+
+        </Style>
+        <Style x:Key="labelsCv" TargetType="Label">
+
+            <Setter Property="FontFamily" Value="NewFont"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+
+        </Style>
 
         <Style x:Key="TopButtonsStyle" TargetType="Button">
 
             <Setter Property="FontSize" Value="Default"/>
             <Setter Property="FontAttributes" Value="Bold"/>
             <Setter Property="FontFamily" Value=""/>
-            <Setter Property="TextColor" Value="DeepSkyBlue"/>
+            <Setter Property="TextColor" Value="Wheat"/>
             <Setter Property="BackgroundColor" Value="Transparent"/>
 
         </Style>
@@ -49,7 +56,7 @@
             <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
             <Setter Property="RowSpacing" Value="10"/>
             <Setter Property="ColumnSpacing" Value="10"/>
-            <Setter Property="Margin" Value="20"/>            
+            <Setter Property="Margin" Value="20,10,20,0"/>            
 
         </Style>
 
@@ -58,8 +65,7 @@
         <!--Frames style-->
         <Style x:Key="FramesStyle" TargetType="Frame">
 
-            <Setter Property="BackgroundColor" Value="#8C82D5"/>
-            <Setter Property="BorderColor" Value="Transparent"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>            
             <Setter Property="CornerRadius" Value="25"/>
 
         </Style>
@@ -102,15 +108,48 @@
 
         </HorizontalStackLayout>
 
-        <!--Today's date-->
-        <HorizontalStackLayout Grid.Row="1"
-                               Margin="10,10,0,10"
-                               HorizontalOptions="Center">
+        <CollectionView x:Name="detailedWeatherDataView"
+                        Grid.Row="1" HeightRequest="140"
+                        Margin="20,10,20,0">
 
-            <Label x:Name="todaysDate"
-                   Style="{StaticResource DateResources}"/>
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal"
+                                   ItemSpacing="10">
+                </LinearItemsLayout>
+            </CollectionView.ItemsLayout>
 
-        </HorizontalStackLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+
+                    <Grid Grid.Row="4" RowDefinitions="Auto, Auto, Auto">
+
+                        <Frame BackgroundColor="Transparent"
+                               CornerRadius="25">
+
+                            <StackLayout>
+                                <Label Grid.Row="0"
+                                       FontSize="Small"
+                                       Style="{StaticResource labelsCv}"
+                                       Text="{Binding dateTime}"/>
+
+                                <Image Grid.Row="1"
+                                       Style="{StaticResource cvImage}"/>
+
+                                <Label Grid.Row="2"
+                                       FontSize="Large"
+                                       Style="{StaticResource labelsCv}"
+                                       Text="{Binding main.convertedTemp, StringFormat='{0}°C'}"/>                                          
+
+                            </StackLayout>
+
+                        </Frame>
+                                                                    
+                    </Grid>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
 
 
 
@@ -233,35 +272,6 @@
             </Frame>
 
         </Grid>
-
-        <VerticalStackLayout Grid.Row="3"
-                             VerticalOptions="EndAndExpand"
-                             HeightRequest="30" Margin="0">
-
-            <HorizontalStackLayout HorizontalOptions="Center">
-
-                <Label x:Name="cityLabel" FontSize="10" TextColor="Black"/>
-                <Label x:Name="countryLabel" FontSize="10" TextColor="Black"/>
-                <Label x:Name="latLabel" FontSize="10" TextColor="Black"/>
-                <Label x:Name="lonLabel" FontSize="10" TextColor="Black"/>
-
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout HorizontalOptions="Center">
-
-                <Label Text="Forecast app developed by " FontSize="10" TextColor="Black"/>
-                <Label Text="stbestichhh" FontSize="10" TextDecorations="Underline" TextColor="Black"/>
-
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout HorizontalOptions="Center">
-
-                <Label Text="Based on " FontSize="10" TextColor="Black"/>
-                <Label Text="openweathermap.org/api" FontSize="10" TextDecorations="Underline" TextColor="Black"/>
-
-            </HorizontalStackLayout>
-                        
-        </VerticalStackLayout>
 
     </Grid>
 
