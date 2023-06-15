@@ -2,20 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherApp.WeatherPage"
-             Title="WeatherPage">
-
-    <!--Page Background-->
-    <ContentPage.Background>
-
-        <LinearGradientBrush EndPoint="1,2">
-                <GradientStop Color="#8C82D5"
-                          Offset="0.1" />
-                <GradientStop Color="#7929EF"
-                          Offset="1.9" />
-        </LinearGradientBrush>
-
-    </ContentPage.Background>
-
+             Title="WeatherPage"
+             BackgroundColor="CornflowerBlue">
 
 
     <!--Resources-->
@@ -27,7 +15,7 @@
             <Setter Property="FontSize" Value="Default"/>
             <Setter Property="FontAttributes" Value="Bold"/>
             <Setter Property="FontFamily" Value=""/>
-            <Setter Property="TextColor" Value="DeepSkyBlue"/>
+            <Setter Property="TextColor" Value="Wheat"/>
             <Setter Property="BackgroundColor" Value="Transparent"/>
 
         </Style>
@@ -52,20 +40,26 @@
         </Style>
 
         <!--Additional Weaher Data Resources-->
-        <Style x:Key="AdditionalWeatherDataImages" TargetType="Image">
-
-            <Setter Property="HeightRequest" Value="50"/>
-            <Setter Property="HorizontalOptions" Value="Center"/>
-
-        </Style>
         <Style x:Key="AdditionalWeatherDataLabels" TargetType="Label">
 
             <Setter Property="FontAttributes" Value="Bold"/>
             <Setter Property="FontFamily" Value="NewFont"/>
             <Setter Property="HorizontalOptions" Value="Center"/>
-            <Setter Property="TextColor" Value="DeepSkyBlue"/>
+            <Setter Property="TextColor" Value="White"/>
 
         </Style>
+
+        <Style x:Key="AditionalLabels" TargetType="Label">
+
+            <Setter Property="FontSize" Value="Default"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontFamily" Value=""/>
+            <Setter Property="TextColor" Value="Wheat"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+
+        </Style>
+
         <Style x:Key="TemperatureLabel" TargetType="Label">
 
             <Setter Property="HorizontalOptions" Value="Start"/>
@@ -134,32 +128,49 @@
         </StackLayout>            
               
         <!--Additional weather data-->
-        <Grid Grid.Row="3"              
-              RowDefinitions="Auto, Auto"
+        <Frame Grid.Row="3" Margin="20,300,20,0" BackgroundColor="Transparent"
+               CornerRadius="25">
+
+            <Grid RowDefinitions="Auto, Auto"
               ColumnDefinitions="0.33*, 0.33*, 0.33*"
-              Margin="20">
+              Margin="5">
 
-            <!--left--> 
-            <Image Grid.Row="0" Grid.Column="0"
-                   Style="{StaticResource AdditionalWeatherDataImages}"
-                   Source="hydrometer.png"/>
+                <!--Left-->
+                <Label Text="Humidity"
+                       Grid.Row="0" Grid.Column="0"
+                       Style="{StaticResource AditionalLabels}"/>
 
-            <Label x:Name="hydrometerValueLabel"
-                   Grid.Row="1" Grid.Column="0"
-                   Style="{StaticResource AdditionalWeatherDataLabels}"/>                        
+                <Label x:Name="hydrometerValueLabel"
+                       Grid.Row="1" Grid.Column="0"
+                       Style="{StaticResource AdditionalWeatherDataLabels}"/>
 
-            <!--right-->
-            <Image Grid.Row="0" Grid.Column="2"
-                   Style="{StaticResource AdditionalWeatherDataImages}"
-                   Source="wind.png"/>
+                <!--Center-->
+                <Label Text="↑" Grid.Row="0" Grid.Column="1"
+                       HorizontalOptions="Center"
+                       Style="{StaticResource AdditionalWeatherDataLabels}"/>
+                <Label Text="Swipe" Grid.Row="1" Grid.Column="1"
+                       HorizontalOptions="Center"
+                       Style="{StaticResource AdditionalWeatherDataLabels}"/>
 
-            <Label x:Name="windSpeedLabel"
-                   Grid.Row="1" Grid.Column="2"
-                   Style="{StaticResource AdditionalWeatherDataLabels}"/>
+                <!--Right-->
+                <Label Text="Wind speed"
+                       Grid.Row="0" Grid.Column="2"
+                       Style="{StaticResource AditionalLabels}"/>
 
-        </Grid>
+                <Label x:Name="windSpeedLabel"
+                       Grid.Row="1" Grid.Column="2"
+                       Style="{StaticResource AdditionalWeatherDataLabels}"/>
 
+            </Grid>
 
+            <Frame.GestureRecognizers>
+
+                <SwipeGestureRecognizer x:Name="TapRecognizer" Swiped="TapRecognizer_Swiped" Direction="Up"/>
+
+            </Frame.GestureRecognizers>
+
+        </Frame>
+        
         <!--Deatiled weather-->
         <!--<CollectionView x:Name="detailedWeatherDataView"
                         Grid.Row="4" HeightRequest="140"
