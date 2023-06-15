@@ -90,13 +90,6 @@ public partial class WeatherPage : ContentPage
         windSpeedLabel.Text = getWeather.list[0].wind.speedInMeters + " m/s";
     }
 
-    
-    private void OnFrameTapped(Object sender, TappedEventArgs e)
-    {        
-        Navigation.PushModalAsync(new DetailedWeatherPage());
-    }
-
-
     public async Task ChekInterntetConnectivity()
     {
         if(Connectivity.Current.NetworkAccess == NetworkAccess.None)
@@ -106,5 +99,10 @@ public partial class WeatherPage : ContentPage
                                 cancel: "Ok");
             System.Environment.Exit(0);
         }
+    }
+
+    async void TapRecognizer_Swiped(System.Object sender, Microsoft.Maui.Controls.SwipedEventArgs e)
+    {
+        await Navigation.PushModalAsync(new DetailedWeatherPage());
     }
 }
