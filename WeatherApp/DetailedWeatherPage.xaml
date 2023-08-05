@@ -216,7 +216,7 @@
                    Style="{StaticResource FramesStyle}">
                 <StackLayout Orientation="Horizontal">
 
-                    <Image Source="humidity.png"
+                    <Image Source="hydrometer.png"
                            Style="{StaticResource imageStyle}"/>
 
                     <Label x:Name="humidityLabel" Margin="13,0,0,0"
@@ -230,7 +230,7 @@
                    Style="{StaticResource FramesStyle}">
                 <StackLayout Orientation="Horizontal">
 
-                    <Image Source="windspeed.png"
+                    <Image Source="wind.png"
                            Style="{StaticResource imageStyle}"/>
 
                     <Label x:Name="windSpeedLabel" Margin="10,0,0,0"
