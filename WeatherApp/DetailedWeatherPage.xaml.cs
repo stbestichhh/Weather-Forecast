@@ -5,9 +5,6 @@ namespace WeatherApp;
 public partial class DetailedWeatherPage : ContentPage, IUpdateApp
 {
     private WeatherPage weatherPage = new WeatherPage();
-    private string cityName = WeatherPage.cityName;
-    private double latitude = WeatherPage.latitude;
-    private double longitude = WeatherPage.longitude;
 
     public DetailedWeatherPage()
     {
@@ -19,10 +16,10 @@ public partial class DetailedWeatherPage : ContentPage, IUpdateApp
         base.OnAppearing();
         await ChekInterntetConnectivity();
         if (weatherPage.GetDataWeatherGettingMethod()) {
-            await GetWeatherByLocationButton(latitude, longitude);
+            await GetWeatherByLocationButton(weatherPage.GetLatitude(), weatherPage.GetLongtitude());
         }                   
         else {
-            await GetWeatherByCityButton(cityName);
+            await GetWeatherByCityButton(weatherPage.GetCityName());
         }            
     }
 
