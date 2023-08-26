@@ -2,7 +2,7 @@
 
 namespace WeatherApp;
 
-public partial class WeatherPage : ContentPage
+public partial class WeatherPage : ContentPage, IUpdateApp
 {
     public static double latitude;
     public static double longitude;
