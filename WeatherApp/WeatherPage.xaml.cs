@@ -4,16 +4,31 @@ namespace WeatherApp;
 
 public partial class WeatherPage : ContentPage, IUpdateApp
 {
-    public static double latitude;
-    public static double longitude;
-    public static string cityName;
-    private static bool isAlreadyLaunched;
+    private static double latitude;
+    public double GetLatitude()
+    {
+        return latitude;
+    }
+
+    private static double longitude;
+    public double GetLongtitude()
+    {
+        return longitude;
+    }
+    
+    private static string cityName;
+    public string GetCityName()
+    {
+        return cityName;
+    }
 
     private static bool howtoGetDataWeather;
     public bool GetDataWeatherGettingMethod()
     {
         return howtoGetDataWeather;
     }
+
+    private static bool isAlreadyLaunched;
 
     public WeatherPage()
     {
