@@ -3,8 +3,8 @@
 namespace WeatherApp;
 
 public partial class DetailedWeatherPage : ContentPage
-{    
-    private bool weatherDataGettingOption = WeatherPage.howtoGetDataWeather;
+{
+    private WeatherPage weatherPage = new WeatherPage();
     private string cityName = WeatherPage.cityName;
     private double latitude = WeatherPage.latitude;
     private double longitude = WeatherPage.longitude;
@@ -18,7 +18,7 @@ public partial class DetailedWeatherPage : ContentPage
     {
         base.OnAppearing();
         await ChekInterntetConnectivity();
-        if (weatherDataGettingOption != false) {
+        if (weatherPage.GetDataWeatherGettingMethod()) {
             await GetWeatherByLocationButton(latitude, longitude);
         }                   
         else {
