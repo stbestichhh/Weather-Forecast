@@ -7,8 +7,13 @@ public partial class WeatherPage : ContentPage
     public static double latitude;
     public static double longitude;
     public static string cityName;
-    public static bool howtoGetDataWeather;
     private static bool isAlreadyLaunched;
+
+    private static bool howtoGetDataWeather;
+    public bool GetDataWeatherGettingMethod()
+    {
+        return howtoGetDataWeather;
+    }
 
     public WeatherPage()
     {
