@@ -2,7 +2,7 @@
 
 namespace WeatherApp;
 
-public partial class DetailedWeatherPage : ContentPage
+public partial class DetailedWeatherPage : ContentPage, IUpdateApp
 {
     private WeatherPage weatherPage = new WeatherPage();
     private string cityName = WeatherPage.cityName;
