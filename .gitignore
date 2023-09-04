@@ -1,3 +1,6 @@
+#API
+WeatherApp/Services/ApiService.cs
+
 # globs
 Makefile.in
 *.userprefs
