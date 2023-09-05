@@ -7,6 +7,8 @@ This is a [.NET 7 MAUI ](https://dotnet.microsoft.com/en-us/apps/maui)app which 
 
 ## [CHANGELOG](CHANGELOG.md)
 
+## Screenshots
+
 ![](Screenshots/mainpage.png) ![](Screenshots/secondarypage.png)
 
 ## Instalation
