@@ -18,7 +18,7 @@ After instalation write your APIKEY from [openweathermap.org](https://openweathe
 
 ## FAQ
 
-###This app requires internet connection###
+### This app requires internet connection
 
 > ![](Screenshots/internetException.png "Internet Exception image")
 
