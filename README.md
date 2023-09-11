@@ -1,5 +1,7 @@
-# Weather App
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
+# Weather App
 
 based on [openweathermap/api](https://openweathermap.org/api)
 
