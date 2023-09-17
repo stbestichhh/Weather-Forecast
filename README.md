@@ -13,7 +13,11 @@ This is a [.NET 7 MAUI ](https://dotnet.microsoft.com/en-us/apps/maui)app which 
 
 ![](Screenshots/mainpage.png) ![](Screenshots/secondarypage.png)
 
-## Instalation
+## App Instalation
+
+You can download APK file form [latest release](https://github.com/stbestichhh/Weather-Forecast/releases/tag/Stable)
+
+## Project Instalation
 
 How to install you can find [here.](https://github.com/dotnet/maui/wiki#getting-started)
 After instalation write your APIKEY from [openweathermap.org](https://openweathermap.org/api) in [ApiService.cs](https://github.com/stbestichhh/Weather-Forecast/blob/master/WeatherApp/Services/ApiService.cs)
