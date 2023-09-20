@@ -119,7 +119,7 @@ public partial class WeatherPage : ContentPage, IUpdateApp
         }
     }
 
-    async void TapRecognizer_Swiped(System.Object sender, Microsoft.Maui.Controls.SwipedEventArgs e)
+    private async void TapRecognizer_Swiped(System.Object sender, Microsoft.Maui.Controls.SwipedEventArgs e)
     {
         await Navigation.PushModalAsync(new DetailedWeatherPage());
     }

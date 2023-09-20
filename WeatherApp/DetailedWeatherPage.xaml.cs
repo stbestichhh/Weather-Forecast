@@ -23,9 +23,9 @@ public partial class DetailedWeatherPage : ContentPage, IUpdateApp
         }            
     }
 
-    private void OnGoBackButtonClicked(Object sender, EventArgs e)
+    private async void OnGoBackButtonClicked(Object sender, EventArgs e)
     {
-        Navigation.PushModalAsync(new WeatherPage());
+        await Navigation.PopModalAsync();
     }
 
     public async Task GetWeatherByCityButton(string city)
