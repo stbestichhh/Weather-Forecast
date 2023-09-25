@@ -15,12 +15,19 @@ public partial class DetailedWeatherPage : ContentPage, IUpdateApp
     {
         base.OnAppearing();
         await ChekInterntetConnectivity();
-        if (weatherPage.GetDataWeatherGettingMethod()) {
+        await LoadDataInRightWay();           
+    }
+
+    private async Task LoadDataInRightWay()
+    {
+        if (weatherPage.GetDataWeatherGettingMethod())
+        {
             await GetWeatherByLocationButton(weatherPage.GetLatitude(), weatherPage.GetLongtitude());
-        }                   
-        else {
+        }
+        else
+        {
             await GetWeatherByCityButton(weatherPage.GetCityName());
-        }            
+        }
     }
 
     private async void OnGoBackButtonClicked(Object sender, EventArgs e)
@@ -61,10 +68,16 @@ public partial class DetailedWeatherPage : ContentPage, IUpdateApp
     {
         if (Connectivity.Current.NetworkAccess == NetworkAccess.None)
         {
-            await DisplayAlert(title: "Internet connection not found!",
-                                message: "Make sure you connected to the internet and reconect.",
-                                cancel: "Reconect");
-            base.OnAppearing();            
+            var result = await DisplayAlert(
+                title: "Internet connection not found!",
+                message: "Make sure you are connected to the internet and reconnect.",
+                accept: "Reconnect",
+                cancel: "Exit");
+
+            if (result)
+            {
+                await LoadDataInRightWay();
+            }
         }
     }
 }
