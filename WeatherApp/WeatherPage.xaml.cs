@@ -15,7 +15,7 @@ public partial class WeatherPage : ContentPage, IUpdateApp
     {
         return longitude;
     }
-    
+
     private static string cityName;
     public string GetCityName()
     {
@@ -38,16 +38,24 @@ public partial class WeatherPage : ContentPage, IUpdateApp
     protected async override void OnAppearing()
     {
         base.OnAppearing();
-        if(isAlreadyLaunched == false) {
-            await GetUsersLocation();
-        }            
+        await LodaDataInRightWay();
+    }
 
-        if (howtoGetDataWeather != false) {
+    private async Task LodaDataInRightWay()
+    {
+        if (isAlreadyLaunched == false)
+        {
+            await GetUsersLocation();
+        }
+
+        if (howtoGetDataWeather != false)
+        {
             await GetWeatherByLocation(latitude, longitude);
-        }            
-        else {
+        }
+        else
+        {
             await GetWeatherBySearchedCity(cityName);
-        }            
+        }
     }
 
     public async Task GetUsersLocation()
@@ -110,14 +118,21 @@ public partial class WeatherPage : ContentPage, IUpdateApp
 
     public async Task ChekInterntetConnectivity()
     {
-        if(Connectivity.Current.NetworkAccess == NetworkAccess.None)
+        if (Connectivity.Current.NetworkAccess == NetworkAccess.None)
         {
-            await DisplayAlert(title: "Internet connection not found!",
-                                message: "Make sure you connected to the internet and reconect.",
-                                cancel: "Reconect");
-            base.OnAppearing();
+            var result = await DisplayAlert(
+                title: "Internet connection not found!",
+                message: "Make sure you are connected to the internet and reconnect.",
+                accept: "Reconnect",
+                cancel: "Exit");
+
+            if (result)
+            {
+                await LodaDataInRightWay();
+            }
         }
     }
+
 
     private async void TapRecognizer_Swiped(System.Object sender, Microsoft.Maui.Controls.SwipedEventArgs e)
     {
