@@ -62,9 +62,9 @@ public partial class DetailedWeatherPage : ContentPage, IUpdateApp
         if (Connectivity.Current.NetworkAccess == NetworkAccess.None)
         {
             await DisplayAlert(title: "Internet connection not found!",
-                                message: "Make sure you connected to the internet and restart an app",
-                                cancel: "Ok");
-            System.Environment.Exit(0);
+                                message: "Make sure you connected to the internet and reconect.",
+                                cancel: "Reconect");
+            base.OnAppearing();            
         }
     }
 }
