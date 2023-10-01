@@ -9,4 +9,3 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(AppRoutes.mainPageRoute, typeof(MainPage));
     }
 }
-

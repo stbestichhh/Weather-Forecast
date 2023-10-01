@@ -6,4 +6,8 @@ public partial class MainPage : ContentPage
     {
         InitializeComponent();
     }
+
+    void SearchButton_Clicked(System.Object sender, System.EventArgs e)
+    {
+    }
 }

@@ -3,12 +3,63 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherForecastApp.Views.MainPage"
              Title="MainPage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#164269">
 
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+        <Frame BorderColor="White" CornerRadius="20" HasShadow="True" Margin="15">
+            <Frame.Shadow>
+                <Shadow Offset="20,20" Radius="20" Opacity="0.7"/>
+            </Frame.Shadow>
+
+            <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,*">
+                <HorizontalStackLayout Grid.Row="0" Grid.ColumnSpan="2">
+
+                    <Image Source="pick_location.png" HeightRequest="30" WidthRequest="30"
+                           HorizontalOptions="Start" VerticalOptions="Center" Margin="0,0,10,0"/>
+
+                    <Entry x:Name="LocationEntry" Placeholder="Enter city name" Margin="0,0,10,0" WidthRequest="240"
+                           FontSize="Default" FontAttributes="Bold" FontFamily=""/>
+
+                    <ImageButton x:Name="SearchButton" Source="search_button.png" BorderWidth="0.5"
+                                 CornerRadius="22" HeightRequest="20" WidthRequest="20" Clicked="SearchButton_Clicked"/>
+
+                </HorizontalStackLayout>
+
+                <VerticalStackLayout Grid.Row="1" Grid.ColumnSpan="2" Margin="0,50,0,50">
+
+                    <Image x:Name="WeatherImage" Source="icon_01d.png" HeightRequest="100" WidthRequest="100"/>
+
+                    <Label x:Name="TempLabel" Text="0°C" FontAttributes="Bold" FontSize="50" FontFamily=""
+                           HorizontalOptions="Center" Margin="0,10,0,0"/>
+
+                    <Label x:Name="ConditionsLabel" Text="Scattered Clouds" FontAttributes="Bold" FontSize="20" FontFamily=""
+                           HorizontalOptions="Center"/>
+
+                </VerticalStackLayout>
+
+                <Grid Grid.Row="2" Grid.Column="0" RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,Auto">
+                    <Image Grid.RowSpan="2" Grid.Column="0" Source="hydrometer.png" WidthRequest="40" HeightRequest="40"/>
+
+                    <Label x:Name="HumidityLabel" Grid.Row="0" Grid.Column="1" Text="0 %" FontSize="Default" FontAttributes="Bold"
+                           FontFamily=""/>
+
+                    <Label Grid.Row="1" Grid.Column="1" Text="Humidity" FontAttributes="Bold" FontFamily=""/>
+
+                </Grid>
+
+                <Grid Grid.Row="2" Grid.Column="1" RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,Auto" HorizontalOptions="End">
+                    <Image Grid.RowSpan="2" Grid.Column="0" Source="wind.png" WidthRequest="40" HeightRequest="40" Margin="0,0,5,0"/>
+
+                    <Label x:Name="WindSpeedLabel" Grid.Row="0" Grid.Column="1" Text="0 km/h" FontSize="Default" FontAttributes="Bold"
+                           FontFamily=""/>
+
+                    <Label Grid.Row="1" Grid.Column="1" Text="Wind speed" FontAttributes="Bold" FontFamily=""/>
+
+                </Grid>
+            </Grid>
+        </Frame>
     </VerticalStackLayout>
+    
 </ContentPage>
