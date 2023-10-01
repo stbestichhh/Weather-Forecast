@@ -59,6 +59,10 @@
 
                 </Grid>
             </Grid>
+
+            <Frame.GestureRecognizers>
+                <SwipeGestureRecognizer x:Name="SwipeUpGesture" Swiped="SwipeUpGesture_Swiped" Direction="Up"/>
+            </Frame.GestureRecognizers>
         </Frame>
     </VerticalStackLayout>
     
