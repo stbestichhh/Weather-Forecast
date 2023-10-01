@@ -7,10 +7,17 @@
     xmlns:views="clr-namespace:WeatherForecastApp.Views"
     Shell.FlyoutBehavior="Disabled">
 
+    <!-- Main Weather page -->
     <ShellContent
         Title="Main Weather page"
         ContentTemplate="{DataTemplate views:MainPage}"
         Route="MainPage"/>
+
+    <!-- Detailed Weather page -->
+    <ShellContent
+        Title="Detailed Weather page"
+        ContentTemplate="{DataTemplate views:SecondaryPage}"
+        Route="SecondaryPage"/>
 
 </Shell>
 
