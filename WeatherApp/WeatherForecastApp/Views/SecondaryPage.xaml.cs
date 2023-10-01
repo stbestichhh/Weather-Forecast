@@ -6,4 +6,9 @@ public partial class SecondaryPage : ContentPage
     {
         InitializeComponent();
     }
+
+    private async void SwipeDownGesture_Swiped(System.Object sender, Microsoft.Maui.Controls.SwipedEventArgs e)
+    {
+        await Shell.Current.GoToAsync(AppRoutes.mainPageRoute);
+    }
 }

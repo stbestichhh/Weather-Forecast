@@ -8,7 +8,7 @@
 
     <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
 
-        <Frame BorderColor="White" CornerRadius="20" HasShadow="True" Margin="15">
+        <Frame BorderColor="White" BackgroundColor="White" CornerRadius="20" HasShadow="True" Margin="15">
             <Frame.Shadow>
                 <Shadow Offset="20,20" Radius="20" Opacity="0.7"/>
             </Frame.Shadow>
