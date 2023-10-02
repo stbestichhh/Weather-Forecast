@@ -6,7 +6,7 @@
              Shell.NavBarIsVisible="False"
              BackgroundColor="#164269">
 
-    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Start">
 
         <Frame BorderColor="White" BackgroundColor="White" CornerRadius="20" HasShadow="True" Margin="15">
             <Frame.Shadow>
@@ -14,31 +14,57 @@
             </Frame.Shadow>
 
             <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,Auto,Auto,Auto"
-                  Margin="0,15,0,15">
+                  Margin="15" RowSpacing="30">
 
                 <!-- Column 1 -->
-                <Image Grid.Column="0" Grid.Row="0" Source="temperature.png"/>
+                <Image Grid.Column="0" Grid.Row="0" Source="temperature.png" WidthRequest="50" HeightRequest="50"/>
+                <Label Text="0°C" Grid.Row="0" Grid.Column="1" FontSize="20" VerticalOptions="Start"/>
+                <Label Text="Temperature" Grid.Row="0" Grid.Column="1" FontSize="12" VerticalOptions="End" Margin="0,0,0,5" Padding="0,0,55,0"/>
 
-                <Image Grid.Column="0" Grid.Row="1" Source="min_max_temp.png"/>
+                <Image Grid.Column="0" Grid.Row="1" Source="min_max_temp.png" WidthRequest="50" HeightRequest="50"/>
+                <Label Text="0°C" Grid.Row="1" Grid.Column="1" FontSize="20" VerticalOptions="Start" Padding="0,0,55,0"/>
+                <Label Text="Temperature" Grid.Row="1" Grid.Column="1" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
 
-                <Image Grid.Column="0" Grid.Row="2" Source="sunrise.png"/>
+                <Image Grid.Column="0" Grid.Row="2" Source="sunrise.png" WidthRequest="50" HeightRequest="50"/>
+                <Label Text="0°C" Grid.Row="2" Grid.Column="1" FontSize="20" VerticalOptions="Start" Padding="0,0,55,0"/>
+                <Label Text="Temperature" Grid.Row="2" Grid.Column="1" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
 
-                <Image Grid.Column="0" Grid.Row="3" Source="sunset.png"/>
+                <Image Grid.Column="0" Grid.Row="3" Source="sunset.png" WidthRequest="50" HeightRequest="50"/>
+                <Label Text="0°C" Grid.Row="3" Grid.Column="1" FontSize="20" VerticalOptions="Start" Padding="0,0,55,0"/>
+                <Label Text="Temperature" Grid.Row="3" Grid.Column="1" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
 
-                <Image Grid.Column="0" Grid.Row="4" Source="hydrometer.png"/>
+                <Image Grid.Column="0" Grid.Row="4" Source="hydrometer.png" WidthRequest="50" HeightRequest="50"/>
+                <Label Text="0°C" Grid.Row="4" Grid.Column="1" FontSize="20" VerticalOptions="Start" Padding="0,0,55,0"/>
+                <Label Text="Temperature" Grid.Row="4" Grid.Column="1" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
 
-                <Image Grid.Column="0" Grid.Row="5" Source="see_level.png"/>
+                <Image Grid.Column="0" Grid.Row="5" Source="see_level.png" WidthRequest="50" HeightRequest="50"/>
+                <Label Text="0°C" Grid.Row="5" Grid.Column="1" FontSize="20" VerticalOptions="Start" Padding="0,0,55,0"/>
+                <Label Text="Temperature" Grid.Row="5" Grid.Column="1" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
 
                 <!-- Column 2 -->
-                <Image Grid.Column="1" Grid.Row="0" Source="feelslike_temp.png"/>
+                <Image Grid.Column="2" Grid.Row="0" Source="feelslike_temp.png" WidthRequest="50" HeightRequest="50"/>
+                <Label Text="0°C" Grid.Row="0" Grid.Column="3" FontSize="20" VerticalOptions="Start"/>
+                <Label Text="Temperature" Grid.Row="0" Grid.Column="3" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
 
-                <Image Grid.Column="1" Grid.Row="1" Source="visibility.png"/>
+                <Image Grid.Column="2" Grid.Row="1" Source="min_max_temp.png" WidthRequest="50" HeightRequest="50"/>
+                <Label Text="0°C" Grid.Row="1" Grid.Column="3" FontSize="20" VerticalOptions="Start"/>
+                <Label Text="Temperature" Grid.Row="1" Grid.Column="3" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
 
-                <Image Grid.Column="1" Grid.Row="2" Source="pressure.png"/>
+                <Image Grid.Column="2" Grid.Row="2" Source="pressure.png" WidthRequest="50" HeightRequest="50"/>
+                <Label Text="0°C" Grid.Row="2" Grid.Column="3" FontSize="20" VerticalOptions="Start"/>
+                <Label Text="Temperature" Grid.Row="2" Grid.Column="3" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
 
-                <Image Grid.Column="1" Grid.Row="3" Source="clouds.png"/>
+                <Image Grid.Column="2" Grid.Row="3" Source="clouds.png" WidthRequest="50" HeightRequest="50"/>
+                <Label Text="0°C" Grid.Row="3" Grid.Column="3" FontSize="20" VerticalOptions="Start"/>
+                <Label Text="Temperature" Grid.Row="3" Grid.Column="3" FontSize="12" VerticalOptions="End" Margin="1,0,0,5"/>
 
-                <Image Grid.Column="1" Grid.Row="4" Source="ground_level.png"/>                
+                <Image Grid.Column="2" Grid.Row="4" Source="ground_level.png" WidthRequest="50" HeightRequest="50"/>
+                <Label Text="0°C" Grid.Row="4" Grid.Column="3" FontSize="20" VerticalOptions="Start"/>
+                <Label Text="Temperature" Grid.Row="4" Grid.Column="3" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
+
+                <Image Grid.Column="2" Grid.Row="5" Source="visibility.png" WidthRequest="50" HeightRequest="50"/>
+                <Label Text="0°C" Grid.Row="5" Grid.Column="3" FontSize="20" VerticalOptions="Start"/>
+                <Label Text="Temperature" Grid.Row="5" Grid.Column="3" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
 
             </Grid>
 
@@ -52,7 +78,59 @@
                 <Shadow Offset="20,20" Radius="20" Opacity="0.7"/>
             </Frame.Shadow>
 
+            <StackLayout>
+                
+                <CollectionView x:Name="CollectionView" Header="5 Day / 3 Hour Forecast" HeightRequest="140">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
 
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Vertical">
+                                <Grid RowDefinitions="Auto,Auto,Auto">
+                                    <Frame BackgroundColor="Transparent" CornerRadius="25">
+                                        <StackLayout>
+                                            <Label Grid.Row="0"
+                                                FontSize="Small"
+                                                FontAttributes="Bold"
+                                                TextColor="Black"
+                                                HorizontalOptions="Center"
+                                                Text="{Binding dateTime}"/>
+
+                                            <Image Grid.Row="1"
+                                                   HeightRequest="50"
+                                                   WidthRequest="50"
+                                                   VerticalOptions="Start"
+                                                   HorizontalOptions="Center"
+                                                   Source="{Binding weather[0].apiWeatherImage}"/>
+
+                                            <Label Grid.Row="2"
+                                                FontSize="Large"
+                                                FontAttributes="Bold"
+                                                TextColor="Black"
+                                                HorizontalOptions="Center"
+                                                Text="{Binding main.convertedTemp, StringFormat='{0}°C'}"/>
+
+                                        </StackLayout>
+
+                                        <Frame.GestureRecognizers>
+                                            <SwipeGestureRecognizer x:Name="SwipeDownGesture2" Swiped="SwipeDownGesture_Swiped" Direction="Down"/>
+                                        </Frame.GestureRecognizers>
+
+                                    </Frame>
+
+                                </Grid>
+
+                            </StackLayout>
+
+                        </DataTemplate>
+
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+
+            </StackLayout>
                         
         </Frame>
     </VerticalStackLayout>
