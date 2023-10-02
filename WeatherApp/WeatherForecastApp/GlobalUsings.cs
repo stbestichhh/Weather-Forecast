@@ -1,4 +1,4 @@
 ﻿global using System;
 global using WeatherForecastApp.Views;
 global using WeatherForecastApp.Models;
-using EasyLogPackage;
+global using EasyLogPackage;
