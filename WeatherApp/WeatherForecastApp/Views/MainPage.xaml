@@ -8,7 +8,7 @@
 
     <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
 
-        <Frame BorderColor="White" BackgroundColor="White" CornerRadius="20" HasShadow="True" Margin="15">
+        <Frame BorderColor="White" BackgroundColor="White" CornerRadius="20" HasShadow="True" Margin="10">
             <Frame.Shadow>
                 <Shadow Offset="20,20" Radius="20" Opacity="0.7"/>
             </Frame.Shadow>
@@ -16,8 +16,8 @@
             <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,*" Margin="0,15,0,15">
                 <HorizontalStackLayout Grid.Row="0" Grid.ColumnSpan="2">
 
-                    <Image Source="pick_location.png" HeightRequest="30" WidthRequest="30"
-                           HorizontalOptions="Start" VerticalOptions="Center" Margin="0,0,10,0"/>
+                    <ImageButton x:Name="LocationButton" Source="pick_location.png" HeightRequest="20" WidthRequest="20"
+                                 HorizontalOptions="Start" VerticalOptions="Center" Margin="0,0,5,0" Clicked="LocationButton_Clicked"/>
 
                     <Entry x:Name="LocationEntry" Placeholder="Enter city name" Margin="0,0,10,0" WidthRequest="240"
                            FontSize="Default" FontAttributes="Bold" FontFamily=""/>

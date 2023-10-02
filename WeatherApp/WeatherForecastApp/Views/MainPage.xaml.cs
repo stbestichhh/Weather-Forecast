@@ -12,6 +12,11 @@ public partial class MainPage : ContentPage
 
     }
 
+    void LocationButton_Clicked(System.Object sender, System.EventArgs e)
+    {
+
+    }
+
     private async void SwipeUpGesture_Swiped(System.Object sender, Microsoft.Maui.Controls.SwipedEventArgs e)
     {
         await Shell.Current.GoToAsync(AppRoutes.secondaryPageRoute);
