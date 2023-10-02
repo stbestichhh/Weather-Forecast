@@ -69,7 +69,7 @@
             </Grid>
 
             <Frame.GestureRecognizers>
-                <SwipeGestureRecognizer x:Name="SwipeDownGesture" Swiped="SwipeDownGesture_Swiped" Direction="Down"/>
+                <SwipeGestureRecognizer x:Name="SwipeDownGesture" Swiped="SwipeDownGesture_Swiped" Direction="Up"/>
             </Frame.GestureRecognizers>
         </Frame>
 
@@ -115,7 +115,7 @@
                                         </StackLayout>
 
                                         <Frame.GestureRecognizers>
-                                            <SwipeGestureRecognizer x:Name="SwipeDownGesture2" Swiped="SwipeDownGesture_Swiped" Direction="Down"/>
+                                            <SwipeGestureRecognizer x:Name="SwipeDownGesture2" Swiped="SwipeDownGesture_Swiped" Direction="Up"/>
                                         </Frame.GestureRecognizers>
 
                                     </Frame>

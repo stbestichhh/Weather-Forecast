@@ -9,10 +9,10 @@
         public string country { get; set; }
         public int population { get; set; }
         public int timezone { get; set; }
-
         public int sunrise { get; set; }
-        public string sunriseTime => UtcTimeLibrary.UtcTimeStamp.ConvertToUtc(sunrise);
         public int sunset { get; set; }
+
+        public string sunriseTime => UtcTimeLibrary.UtcTimeStamp.ConvertToUtc(sunrise);
         public string sunsetTime => UtcTimeLibrary.UtcTimeStamp.ConvertToUtc(sunset);
     }
 
@@ -29,9 +29,7 @@
 
     public class List
     {
-        public int dt { get; set; }
-        public string dateTime => UtcTimeLibrary.UtcTimeStamp.ConvertToUtc(dt);
-
+        public int dt { get; set; }       
         public Main main { get; set; }
         public List<Weather> weather { get; set; }
         public Clouds clouds { get; set; }
@@ -48,6 +46,7 @@
         public double convertedTemp => Math.Round(temp);
 
         public double feels_like { get; set; }
+        public double convertedFeels_like => Math.Round(feels_like);
 
         public double temp_min { get; set; }
         public double temp_max { get; set; }
