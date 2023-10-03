@@ -2,12 +2,12 @@
 
 public partial class MainPage : ContentPage, IMainPage
 {
-    public double latitude { get; private set; }
-    public double longitude { get; private set; }
-    public string cityName { get; private set; }
+    public static double latitude { get; private set; }
+    public static double longitude { get; private set; }
+    public static string cityName { get; private set; }
 
     public static bool useLocation { get; private set; }
-    private static bool isAlreadyLaunched;
+    private bool isAlreadyLaunched;
 
     Logf<MainPage> logf;    
 
@@ -21,6 +21,7 @@ public partial class MainPage : ContentPage, IMainPage
     protected async override void OnAppearing()
     {
         base.OnAppearing();
+        await CheckConnection();
         await LoadWeatherData();
     }
 
@@ -111,7 +112,7 @@ public partial class MainPage : ContentPage, IMainPage
     }
 
     private async void SwipeUpGesture_Swiped(System.Object sender, Microsoft.Maui.Controls.SwipedEventArgs e)
-    {
+    {        
         await Shell.Current.GoToAsync(AppRoutes.secondaryPageRoute);
     }
 }

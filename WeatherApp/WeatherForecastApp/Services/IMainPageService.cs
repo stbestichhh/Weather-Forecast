@@ -1,4 +1,4 @@
-﻿namespace WeatherForecastApp.Models
+﻿namespace WeatherForecastApp.Services
 {
     public interface IMainPage
     {

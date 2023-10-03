@@ -18,53 +18,53 @@
 
                 <!-- Column 1 -->
                 <Image Grid.Column="0" Grid.Row="0" Source="temperature.png" WidthRequest="50" HeightRequest="50"/>
-                <Label Text="0°C" Grid.Row="0" Grid.Column="1" FontSize="20" VerticalOptions="Start"/>
+                <Label x:Name="tempLabel" Text="0°C" Grid.Row="0" Grid.Column="1" FontSize="20" VerticalOptions="Start"/>
                 <Label Text="Temperature" Grid.Row="0" Grid.Column="1" FontSize="12" VerticalOptions="End" Margin="0,0,0,5" Padding="0,0,55,0"/>
 
                 <Image Grid.Column="0" Grid.Row="1" Source="min_max_temp.png" WidthRequest="50" HeightRequest="50"/>
-                <Label Text="0°C" Grid.Row="1" Grid.Column="1" FontSize="20" VerticalOptions="Start" Padding="0,0,55,0"/>
-                <Label Text="Temperature" Grid.Row="1" Grid.Column="1" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
+                <Label x:Name="minTempLabel" Text="0°C" Grid.Row="1" Grid.Column="1" FontSize="20" VerticalOptions="Start" Padding="0,0,55,0"/>
+                <Label Text="MIN" Grid.Row="1" Grid.Column="1" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
 
                 <Image Grid.Column="0" Grid.Row="2" Source="sunrise.png" WidthRequest="50" HeightRequest="50"/>
-                <Label Text="0°C" Grid.Row="2" Grid.Column="1" FontSize="20" VerticalOptions="Start" Padding="0,0,55,0"/>
-                <Label Text="Temperature" Grid.Row="2" Grid.Column="1" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
+                <Label x:Name="sunriseLabel" Text="0°C" Grid.Row="2" Grid.Column="1" FontSize="20" VerticalOptions="Start" Padding="0,0,55,0"/>
+                <Label Text="Sunrise" Grid.Row="2" Grid.Column="1" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
 
                 <Image Grid.Column="0" Grid.Row="3" Source="sunset.png" WidthRequest="50" HeightRequest="50"/>
-                <Label Text="0°C" Grid.Row="3" Grid.Column="1" FontSize="20" VerticalOptions="Start" Padding="0,0,55,0"/>
-                <Label Text="Temperature" Grid.Row="3" Grid.Column="1" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
+                <Label x:Name="sunsetLabel" Text="0°C" Grid.Row="3" Grid.Column="1" FontSize="20" VerticalOptions="Start" Padding="0,0,55,0"/>
+                <Label Text="Sunset" Grid.Row="3" Grid.Column="1" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
 
                 <Image Grid.Column="0" Grid.Row="4" Source="hydrometer.png" WidthRequest="50" HeightRequest="50"/>
-                <Label Text="0°C" Grid.Row="4" Grid.Column="1" FontSize="20" VerticalOptions="Start" Padding="0,0,55,0"/>
-                <Label Text="Temperature" Grid.Row="4" Grid.Column="1" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
+                <Label x:Name="humidityLabel" Text="0°C" Grid.Row="4" Grid.Column="1" FontSize="20" VerticalOptions="Start" Padding="0,0,55,0"/>
+                <Label Text="Humidity" Grid.Row="4" Grid.Column="1" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
 
                 <Image Grid.Column="0" Grid.Row="5" Source="see_level.png" WidthRequest="50" HeightRequest="50"/>
-                <Label Text="0°C" Grid.Row="5" Grid.Column="1" FontSize="20" VerticalOptions="Start" Padding="0,0,55,0"/>
-                <Label Text="Temperature" Grid.Row="5" Grid.Column="1" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
+                <Label x:Name="seeLevelLabel" Text="0°C" Grid.Row="5" Grid.Column="1" FontSize="20" VerticalOptions="Start" Padding="0,0,55,0"/>
+                <Label Text="See level" Grid.Row="5" Grid.Column="1" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
 
                 <!-- Column 2 -->
                 <Image Grid.Column="2" Grid.Row="0" Source="feelslike_temp.png" WidthRequest="50" HeightRequest="50"/>
-                <Label Text="0°C" Grid.Row="0" Grid.Column="3" FontSize="20" VerticalOptions="Start"/>
-                <Label Text="Temperature" Grid.Row="0" Grid.Column="3" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
+                <Label x:Name="feelsLikeTempLabel" Text="0°C" Grid.Row="0" Grid.Column="3" FontSize="20" VerticalOptions="Start"/>
+                <Label Text="Feels like" Grid.Row="0" Grid.Column="3" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
 
                 <Image Grid.Column="2" Grid.Row="1" Source="min_max_temp.png" WidthRequest="50" HeightRequest="50"/>
-                <Label Text="0°C" Grid.Row="1" Grid.Column="3" FontSize="20" VerticalOptions="Start"/>
-                <Label Text="Temperature" Grid.Row="1" Grid.Column="3" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
+                <Label x:Name="maxTempLabel" Text="0°C" Grid.Row="1" Grid.Column="3" FontSize="20" VerticalOptions="Start"/>
+                <Label Text="MAX" Grid.Row="1" Grid.Column="3" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
 
                 <Image Grid.Column="2" Grid.Row="2" Source="pressure.png" WidthRequest="50" HeightRequest="50"/>
-                <Label Text="0°C" Grid.Row="2" Grid.Column="3" FontSize="20" VerticalOptions="Start"/>
-                <Label Text="Temperature" Grid.Row="2" Grid.Column="3" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
+                <Label x:Name="pressureLabel" Text="0°C" Grid.Row="2" Grid.Column="3" FontSize="20" VerticalOptions="Start"/>
+                <Label Text="Pressure" Grid.Row="2" Grid.Column="3" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
 
                 <Image Grid.Column="2" Grid.Row="3" Source="clouds.png" WidthRequest="50" HeightRequest="50"/>
-                <Label Text="0°C" Grid.Row="3" Grid.Column="3" FontSize="20" VerticalOptions="Start"/>
-                <Label Text="Temperature" Grid.Row="3" Grid.Column="3" FontSize="12" VerticalOptions="End" Margin="1,0,0,5"/>
+                <Label x:Name="cloudsLabel" Text="0°C" Grid.Row="3" Grid.Column="3" FontSize="20" VerticalOptions="Start"/>
+                <Label Text="Clouds" Grid.Row="3" Grid.Column="3" FontSize="12" VerticalOptions="End" Margin="1,0,0,5"/>
 
                 <Image Grid.Column="2" Grid.Row="4" Source="ground_level.png" WidthRequest="50" HeightRequest="50"/>
-                <Label Text="0°C" Grid.Row="4" Grid.Column="3" FontSize="20" VerticalOptions="Start"/>
-                <Label Text="Temperature" Grid.Row="4" Grid.Column="3" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
+                <Label x:Name="groundLevelLabel" Text="0°C" Grid.Row="4" Grid.Column="3" FontSize="20" VerticalOptions="Start"/>
+                <Label Text="Ground level" Grid.Row="4" Grid.Column="3" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
 
                 <Image Grid.Column="2" Grid.Row="5" Source="visibility.png" WidthRequest="50" HeightRequest="50"/>
-                <Label Text="0°C" Grid.Row="5" Grid.Column="3" FontSize="20" VerticalOptions="Start"/>
-                <Label Text="Temperature" Grid.Row="5" Grid.Column="3" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
+                <Label x:Name="visibilityLabel" Text="0°C" Grid.Row="5" Grid.Column="3" FontSize="20" VerticalOptions="Start"/>
+                <Label Text="Visibility" Grid.Row="5" Grid.Column="3" FontSize="12" VerticalOptions="End" Margin="0,0,0,5"/>
 
             </Grid>
 
@@ -103,7 +103,7 @@
                                                    WidthRequest="50"
                                                    VerticalOptions="Start"
                                                    HorizontalOptions="Center"
-                                                   Source="{Binding weather[0].apiWeatherImage}"/>
+                                                   Source="{Binding weather[0].weatherImage}"/>
 
                                             <Label Grid.Row="2"
                                                 FontSize="Large"
