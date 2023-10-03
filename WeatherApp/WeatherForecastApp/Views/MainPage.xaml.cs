@@ -44,7 +44,7 @@ public partial class MainPage : ContentPage, IMainPage
     public async Task Location_LoadWeatherData(double latitude, double longitude)
     {
         await CheckConnection();
-        var getWeather = ApiService.GetWeather(latitude, longitude);
+        var getWeather = await ApiService.GetWeather(latitude, longitude);
         UpdateUI(getWeather);
 
         useLocation = true;
@@ -53,15 +53,14 @@ public partial class MainPage : ContentPage, IMainPage
     public async Task City_LoadWeatherData(string city)
     {
         await CheckConnection();
-        var getWeather = ApiService.GetWeatherByCity(city);
+        var getWeather = await ApiService.GetWeatherByCity(city);
         UpdateUI(getWeather);
         
         useLocation = false;
     }
 
-    public async void UpdateUI(Task<Root> getWeatherTask)
-    {
-        var getWeather = await getWeatherTask;
+    public void UpdateUI(dynamic getWeather)
+    {        
         LocationEntry.Text = getWeather.city.name;
         WeatherImage.Source = getWeather.list[0].weather[0].weatherImage;
         TempLabel.Text = getWeather.list[0].main.convertedTemp + "°";
@@ -75,6 +74,12 @@ public partial class MainPage : ContentPage, IMainPage
         if(Connectivity.Current.NetworkAccess == NetworkAccess.None)
         {
             await logf.LogWarn("Internet connection not found.", 102);
+            var result = await DisplayAlert(title: "⚠️", message:"Internet connection not found. Make sure you connected to the internet and try again",
+                cancel:"Exit", accept:"Reconect");
+            if (result)
+            {
+                await LoadWeatherData();
+            }
         }
     }
 
@@ -90,8 +95,8 @@ public partial class MainPage : ContentPage, IMainPage
         }
         catch (Exception exception)
         {
-            await DisplayAlert(title: "⚠️ City not found!", message:"Make sure the city name is correct and try again.", cancel:"Ok");
             await logf.LogError(exception, $"City: {searchResponse} not found.", 101);
+            await DisplayAlert(title: "⚠️ City not found!", message:"Make sure the city name is correct and try again.", cancel:"Ok");
         }
         finally
         {
