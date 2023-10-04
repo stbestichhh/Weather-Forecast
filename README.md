@@ -9,10 +9,6 @@ This is a [.NET 7 MAUI ](https://dotnet.microsoft.com/en-us/apps/maui)app which 
 
 ## [CHANGELOG](CHANGELOG.md)
 
-## Screenshots
-
-![](Screenshots/mainpage.png) ![](Screenshots/secondarypage.png)
-
 ## App Instalation
 
 You can download APK file form [latest release](https://github.com/stbestichhh/Weather-Forecast/releases/tag/Stable)
@@ -21,12 +17,6 @@ You can download APK file form [latest release](https://github.com/stbestichhh/W
 
 How to install you can find [here.](https://github.com/dotnet/maui/wiki#getting-started)
 After instalation write your APIKEY from [openweathermap.org](https://openweathermap.org/api) in [ApiService.cs](https://github.com/stbestichhh/Weather-Forecast/blob/master/WeatherApp/Services/ApiService.cs)
-
-## FAQ
-
-### This app requires internet connection
-
-> ![](Screenshots/internetException.png "Internet Exception image")
 
 ## Links
 
