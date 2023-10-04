@@ -11,7 +11,7 @@ This is a [.NET 7 MAUI ](https://dotnet.microsoft.com/en-us/apps/maui)app which 
 
 ## App Instalation
 
-You can download APK file form [latest release](https://github.com/stbestichhh/Weather-Forecast/releases/tag/Stable)
+You can download APK file form [latest release](https://github.com/stbestichhh/Weather-Forecast/releases/tag/v2.0.0)
 
 ## Project Instalation
 
